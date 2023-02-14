@@ -1,1 +1,1 @@
-# Front technologies of BigShop to tested independly from backend
+# Front technologies of BigShop to tested independent of backend
