@@ -4,6 +4,9 @@ body{
     font-weight: 900;
 }
 
+
+/* Navbar section */
+
 /* #search-login{
     padding-right: 10px;
 } */
@@ -19,4 +22,44 @@ body{
 
 #user-icon{
     padding-right: 10px;
+}
+
+
+/* Cover section */
+.background{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-text{
+    font-size:48px !important;
+    color: green
+}
+
+.background1{
+    background-image: url('/images/iphone_11_PNG15.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.background2{
+    background-image: url('/images/laptop_PNG101812.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.background3{
+    background-image: url('/images/server_PNG35.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
 }
