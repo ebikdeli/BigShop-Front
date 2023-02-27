@@ -107,7 +107,7 @@
 
 
   <!-- ******* 'content' block in 'base.html' ******* -->
-  <main class="py-5">
+  <main class="m-auto py-5">
     <h1 class="text-center">Welcome to the BigShop</h1>
     <!-- ***** 'cover' section ***** -->
     <div class="">
@@ -123,13 +123,38 @@
   </div>
 
   <!-- ******* products list section ********** -->
-  <div class="products-list">
-    <div>Hi</div>
-    <div>Hello</div>
-    <div>Why</div>
-    <div>You pressure</div>
-    <div>me</div>
-    <div>Asshole</div>
+  <div class="row products-list my-4">
+    <!-- <div class="products-list my-4"> -->
+    <!-- Every product -->
+    <div class="col-md-3 col-sm-12 mx-1 my-2 product">
+      <div class="product-image-block py-2 mx-auto">
+        <img src="/images/laptop_PNG101812.png" class="product-image" alt="">
+      </div>
+      <div class="product-name pt-2">
+        <p style="font-family:IRANYekan, sans-serif; font-size:26px;">لپ تاپ جدید</p>
+      </div>
+      <div class="product-brand pb-3">
+        <h4>Hewlett packard (HP)</h4>
+      </div>
+      <div class="product-price d-flex justify-content-around">
+        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+        <div class="price-original">
+          <p class="discounted px-3"><span class="price-value">200000<span class="price-currency"> تومان</span></span></p>
+        </div>
+        <div class="price-discounted">
+          <p class="px-3"><strong>190000<i> تومان</i></strong></p>
+        </div>
+      </div>
+      <!-- Every tag for the product listed here (clickable) -->
+      <div class="product-tags">
+        
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12 mx-1 product">Hello</div>
+    <div class="col-md-3 col-sm-12 mx-1 product">Why</div>
+    <div class="col-md-3 col-sm-12 mx-1 product">You pressure</div>
+    <div class="col-md-3 col-sm-12 mx-1 product">me</div>
+    <!-- <div class="col-md-4 col-sm-12 col-12 mx-2 product">Asshole</div> -->
   </div>
   </main>
   <!-- ******* 'content' block in 'base.html' ******* -->
