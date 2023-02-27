@@ -98,12 +98,23 @@ main{
     height: auto;
 }
 
-.discounted{
-    text-decoration: line-through;
+.product-price{
+    font-size: 20px;
 }
 
 .price-original{
     font-family: IRANYekan, sans-serif;
+    color: black;
+}
+
+.discounted{
+    color: red !important;
+    text-decoration: line-through;
+}
+
+.price-discounted{
+    font-family: IRANYekan, sans-serif;
+    color: green;
 }
 
 .price-value{
@@ -111,7 +122,7 @@ main{
 }
 
 .price-currency{
-
+    text-decoration: none;
 }
 
 .price-discounted{
