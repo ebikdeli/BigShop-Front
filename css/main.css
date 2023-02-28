@@ -89,12 +89,21 @@ main{
     border-width: 1px;
 }
 
+/* .product-image-block{
+    
+} */
+
+.product-name{
+    flex-wrap: row wrap;
+}
+
+
 .product-image-block{
-    /* width: 70%; */
+    width: 70%;
 }
 
 .product-image{
-    max-width: 70%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -108,12 +117,14 @@ main{
 }
 
 .discounted{
+    font-size: 16px;
     color: red !important;
     text-decoration: line-through;
 }
 
 .price-discounted{
     font-family: IRANYekan, sans-serif;
+    font-weight: 700;
     color: green;
 }
 
@@ -127,4 +138,29 @@ main{
 
 .price-discounted{
     font-family: IRANYekan, sans-serif;
+}
+
+.add-to-cart{
+    font-family: IRANYekan, sans-serif;
+}
+
+.product-tags{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: row wrap;
+}
+
+.single-tag{
+    background-color: rgb(179, 178, 178);
+}
+
+.single-tag > a{
+    color: black;
+    text-decoration: none;
+}
+
+.single-tag > a > p{
+    padding: 3px 8px;
+    margin: 0;
 }
