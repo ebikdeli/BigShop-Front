@@ -88,16 +88,8 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
-        <!-- login/signup -->
-        <div class="login">
-          <a id="login-link" href="#">
-            <div class="d-flex align-items-center justify-content-between">
-            <!-- if user login: green user icon, If user is not login or not registered: red icon -->
-            <i id="user-icon" class='fas fa-user-alt' style='font-size:30px;color:green'></i>
-            <i>login/register</i>
-            </div>
-          </a>
-        </div>
+        <!-- login/signup (In navbar for future use) -->
+        
       </div>
       
     </div>
@@ -109,14 +101,27 @@
   <!-- ******* 'content' block in 'base.html' ******* -->
   <main class="m-auto py-5">
     <!-- Make cart sticky to the screen -->
-    <div class="s-cart-box">
-      <div class="s-cart">
+    <div class="login-cart-box">
+      <div class="login-cart">
+        <!-- login/signup -->
+        <div class="login py-3">
+          <a id="login-link" href="#">
+            <div class="d-flex align-items-center justify-content-between">
+            <!-- if user login: green user icon, If user is not login or not registered: red icon -->
+            <i id="user-icon" class='fas fa-user-alt' style='font-size:30px;color:green'></i>
+            <i>login/register</i>
+            </div>
+          </a>
+        </div>
+        <!-- cart -->
+        <div class="cart py-3">
         <a href="#" class="s-cart-link">
+          <i class="px-2 fa fa-shopping-cart" style="font-size:28px"></i>
           <div class="s-cart-number">
             <p class="p-0 m-auto text-white">3</p>
           </div>
-          <i class="fa fa-shopping-cart" style="font-size:28px"></i>
         </a>
+      </div>
       </div>
     </div>
     <!-- Make cart sticky to the screen -->
@@ -382,9 +387,38 @@
   <!-- ******* 'content' block in 'base.html' ******* -->
 
 
+  <div id="main-footer-separator" class="my-3 mx-auto"></div>
+
 
   <!-- *** 'footer' block in 'base.html/include footer.html' -->
+  <footer class="mx-auto mt-3 pt-3">
+    <div id="pr-box">
+      <p style="direction: rtl;">لطفا انتقادات و پیشنهادات خود را با ما به اشتراک بگذارید:</p>
+      <div id="pr-form">
+        <form action="#" class="mb-4">
+          <div class="mb-3 mx-auto col-lg-5 col-md-8 col-sm-10" style="direction: ltr;">
+            <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3 mx-auto col-lg-5 col-md-8 col-sm-10">
+            <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="انتقادات و پیشنهادات"></textarea>
+          </div>
+          <button class="btn btn-primary">ارسال</button>
+        </form>
+        
+      </div>
+    </div>
+    <div id="footer-content" class="pt-3">
+      <h5>تمامی حقوق وبسایت بیگ شاپ متعلق به شرکت رایانه پندار آپادانا می باشد</h5>
+      <div class="py-4">
+        <a href="">
+          <img src="./images/logo_bigger_original.jpg" id="footer-img" alt="bigshop logo footer">
+        </a>
+      </div>
 
+    </div>
+  </footer>
   <!-- *** 'footer' block in 'base.html/include footer.html' -->
 
 

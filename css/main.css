@@ -11,9 +11,6 @@ body{
     padding-right: 10px;
 } */
 
-.login{
-    margin-left: 50px;
-}
 
 #login-link{
     text-decoration: none;
@@ -26,15 +23,22 @@ body{
 
 
 /* Make cart sticky to the screen */
-.s-cart-box{
+.login-cart-box{
     position: sticky;
     top: 5px;
 }
 
-.s-cart{
+.login-cart{
     position: absolute;
     right: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 221, 221);
+    border-radius: 8%;
+    padding: 5px 15px;
+    opacity: 80%;
 }
 
 .s-cart-link{
@@ -222,4 +226,49 @@ main{
 .single-tag > a > p{
     padding: 3px 8px;
     margin: 0;
+}
+
+
+#main-footer-separator{
+    width: 80%;
+    border-style: ridge;
+    border-color: rgb(205, 219, 245);
+    border-width: 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+/* ****** footer section ****** */
+/* footer{
+    border-style: ridge;
+    border-color: rgb(205, 219, 245);
+    border-width: 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+} */
+
+#pr-box{
+    direction: rtl;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: IRANYekan, sans-serif;
+    font-size: 28px;
+    font-weight: 550;
+}
+
+#footer-content{
+    background-color: rgb(25, 75, 128);
+    color: whitesmoke;
+    font-family: IRANYekan, sans-serif;
+    text-align: center;
+    direction: rtl;
+}
+
+#footer-img{
+    height: auto;
+    width: 150px;
 }
