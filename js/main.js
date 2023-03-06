@@ -1,0 +1,127 @@
+// *** Send 'pr-form' data to server using Ajax ***
+// * NOTE: When validating forms using javascript, it is better to to let JS do all the validation like check if the input is email, required and etc
+let prForm = document.forms['pr-form'];
+// let prForm = document.querySelector('[name="pr-form"]')
+
+// * Following function used to check if input is a valid email
+const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+// ** Send data to server **
+// * Helper function using 'async'
+let sendData = async (url=new String, form=new FormData ,errorMsg=new String) => {
+    let response = await fetch(url, {
+        method: 'GET',
+        // body: form,
+        // credentials: "same-origin",
+    })
+    console.log(url, form, errorMsg)
+    if (response.status !== 200){
+        return Promise.reject(errorMsg);
+    }
+    return await response.json();
+}
+
+// sendData('https://jsonplaceholder.typicode.com/todos/144444444444444444444')
+// .then(
+//     data => {
+//         console.log(data);
+//     }
+// )
+// .catch(err => {
+//     console.log(err);
+// })
+
+
+prForm.addEventListener('submit', e =>{
+    e.preventDefault();
+    let form = new FormData(prForm);
+    let email = form.get('email');
+    let content = form.get('content');
+    if(!email || !validateEmail(email) || !content){
+        // * Below block is more soffesticated way to show errors to users but we don't want this for now!
+        // let formEmailSection = document.querySelector('#form-email-section');
+        // let errorMessageDiv = document.createElement('div');
+        // errorMessageDiv.classList.add(['pr-error']);
+        // let errorMessage = document.createElement('p');
+        // errorMessageDiv.appendChild(errorMessage);
+        // formEmailSection.prepend(errorMessageDiv);
+        // * Following line is way more brief than above block of code
+        let errorMessage = document.querySelector('#form-email-section > div > p')
+
+        if(!content){
+            let errorMessage = document.querySelector('#form-content-section > div > p');
+            errorMessage.textContent = 'پیام خود را وارد کنید';
+            let contentInput = document.querySelector('#content-input');
+            contentInput.style.borderColor = 'red';
+        }
+
+        if(!email){
+            errorMessage.textContent = 'ایمیل خود را وارد کنید';
+        }
+        else{
+            errorMessage.textContent = 'ایمیل خود را به درستی وارد کنید';
+        }
+        let emailInput = document.getElementById('email-input');
+        emailInput.style.borderColor = 'red';
+    }
+    
+    // * After sending email and content, clear error messages and redo red borders
+    else{
+        document.querySelectorAll('.pr-error > p').forEach(errorP => {
+            errorP.textContent = '';
+        })
+        document.getElementById('email-input').style.borderColor = '#dee2e6';
+        document.getElementById('content-input').style.borderColor = '#dee2e6';
+
+        // Send data to server using ajax
+        sendData(url='https://jsonplaceholder.typicode.com/todos/7676', form=form, errorMsg='اطلاعات ارسال نشد')
+        .then(jsonData => {
+            console.log(jsonData);
+            document.querySelector('#pr-success').textContent = 'از همکاری شما سپاسگذاریم';
+        })
+        .catch(err => {
+            document.querySelector('#pr-failed').textContent = err;
+        })
+
+        // Disable 'pr-box' inputs and buttoms and hide the messages 
+        setTimeout(()=>{
+            document.querySelector('#pr-failed').textContent = '';
+            document.querySelector('#pr-success').textContent = '';
+            document.getElementById('email-input').disabled = true;
+            document.getElementById('content-input').disabled = true;
+            document.querySelector('#send-button').disabled = true;
+        }, 2000)
+    }
+})
+
+
+// *** Set custom html input validity message - NOTE: Better not to use this kind of validation because its ugly and primitive! Use JS power to do the validation! ***
+// document.addEventListener('DOMContentLoaded', event => {
+//     let inputs = document.querySelectorAll('.form-control');
+//     Array.from(inputs).forEach(elem => {
+//         elem.oninvalid = (e => {
+//             console.log(e.target.validity);
+//             if(e.target.validity.typeMismatch){
+//                 e.target.setCustomValidity('لطفا ایمیل خود را به شکل صحیح وارد کنید');
+//             }
+//             if(e.target.validity.valueMissing){
+//                 if(e.target.type == 'email'){
+//                     e.target.setCustomValidity('ایمیل خود را وارد کنید');
+//                 }
+//                 else{
+//                     e.target.setCustomValidity('پیام خود را وارد کنید');
+//                 }
+//             }
+//         })
+//         // Following block is necessary to let the form validation proceeds without any problem
+//         elem.oninput = (e => {
+//             e.target.setCustomValidity('');
+//         })
+//     })
+// })
