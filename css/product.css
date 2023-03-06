@@ -1,0 +1,10 @@
+.product-body{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#main-img{
+    width: 480px;
+    height: 320px;
+}
