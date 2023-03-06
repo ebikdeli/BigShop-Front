@@ -14,13 +14,13 @@ const validateEmail = (email) => {
 
 // ** Send data to server **
 // * Helper function using 'async'
-let sendData = async (url=new String, form=new FormData ,errorMsg=new String) => {
-    let response = await fetch(url, {
-        method: 'GET',
-        // body: form,
-        // credentials: "same-origin",
+let sendPrData = async (url=new String, form=new FormData ,errorMsg=new String) => {
+    let response = await fetch(input=url, init={
+        method: 'POST',
+        body: form,
+        credentials: "same-origin",
+        mode: "cors",
     })
-    console.log(url, form, errorMsg)
     if (response.status !== 200){
         return Promise.reject(errorMsg);
     }
@@ -80,7 +80,8 @@ prForm.addEventListener('submit', e =>{
         document.getElementById('content-input').style.borderColor = '#dee2e6';
 
         // Send data to server using ajax
-        sendData(url='https://jsonplaceholder.typicode.com/todos/7676', form=form, errorMsg='اطلاعات ارسال نشد')
+        sendPrData(url='http://127.0.0.1:8000/', form=form, errorMsg='اطلاعات ارسال نشد')
+        // sendPrData(url='http://ip.jsontest.com/', form=form, errorMsg='اطلاعات ارسال نشد')
         .then(jsonData => {
             console.log(jsonData);
             document.querySelector('#pr-success').textContent = 'از همکاری شما سپاسگذاریم';
