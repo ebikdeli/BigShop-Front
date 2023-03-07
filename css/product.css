@@ -1,10 +1,46 @@
-.product-body{
-    margin-top: 30px;
+/* **** NOTE: When using bootstrap, if we want to put tow or more block in the row but being responsive, it is recommended to use 'row' class to send exessive content to the new line automatically */
+
+/* Following block makes the body responsive without using bootstrap */
+/* .product--body{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+} */
+
+.product--detail{
+    margin-left: 0px;
 }
 
-#main-img{
-    width: 480px;
-    height: 320px;
+.product--name > h2{
+    margin: 0;
+    font-size: 30px;
+    color: rgb(75, 75, 75);
+    font-weight: 600;
+}
+
+.product--brand > h3{
+    font-size: 26px;
+    font-weight: 700;
+    color: rgb(89, 88, 88);
+}
+
+
+.main--img{
+    max-width: 90%;
+}
+
+#main--img{
+    max-width: 100%;
+    height: auto;
+    /* width: 450px;
+    height: 320px; */
+}
+
+input[type='color']{
+    margin-left: 10px;
+}
+
+#plain-price{
+    color: green;
+
 }

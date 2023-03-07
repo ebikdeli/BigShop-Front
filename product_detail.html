@@ -100,21 +100,43 @@
 
 
   <!-- ******* 'content' block in 'base.html' ******* -->
-  <main>
-    <div class="product-body">
+  <main class="mx-auto my-5" style="direction: rtl;">
+    <div class="product--body row justify-content-center">
       <!-- * product detail part -->
-      <div class="product-detail">
-        <div class="product-name">
+      <div class="product--detail col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="product--name pt-1 pb-md-4 pb-sm-4 pb-3">
+          <!-- product name -->
           <h2>Laptop HP db1100-ny</h2>
         </div>
-        <div class="product-brand">
-          <h3>HP</h3>
+        <div class="product--brand pt-1 pb-3">
+          <!-- product brand -->
+          <h3>Hewlett Packard (HP)</h3>
+        </div>
+        <!--  If there are diffrent colors for the product -->
+        <div class="product--colors--box pt-2 pb-3">
+          <div>
+            <p id="color--text" class="h3" style="font-family:IRANYekan, sans-serif; font-weight:600; color:rgb(84, 82, 82);">
+              رنگ های موجود
+            </p>
+          </div>
+          <div class="d-flex justify-content-start">
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+            <input type="color" id="favcolor" name="favcolor" value="">
+            <input type="color" id="favcolor" name="favcolor" value="#99ff33">
+          </div>
+        </div>
+        <div class="product--price--box">
+          <div class="product--price row justify-content-center">
+            <!-- plain product price -->
+            <p id="plain-price" class="m-0 h2">300000</p>
+            <!-- **************************************************** -->
+          </div>
         </div>
       </div>
       <!-- * product images part -->
-      <div class="product-image">
-        <div class="main-img">
-          <img id="main-img" src="./images/laptop_PNG101812.png" alt="">
+      <div class="product--image col-lg-5 col-md-6 col-sm-12 col-12">
+        <div class="main--img">
+          <img id="main--img" src="./images/laptop_PNG101812.png" alt="">
         </div>
       </div>
     </div>
@@ -148,7 +170,7 @@
 <!-- **** 'base_scripts' block in 'base.html' -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="./js/main.js"></script>
+<!-- <script src="./js/main.js"></script> -->
 <script src="./js/product.js"></script>
 <!-- **** 'base_scripts' block in 'base.html' -->
 
