@@ -104,12 +104,12 @@
     <div class="product--body row justify-content-center">
       <!-- * product detail part -->
       <div class="product--detail col-lg-4 col-md-6 col-sm-12 col-12">
+        <!-- product name -->
         <div class="product--name pt-1 pb-md-4 pb-sm-4 pb-3">
-          <!-- product name -->
           <h2>Laptop HP db1100-ny</h2>
         </div>
+        <!-- product brand -->
         <div class="product--brand pt-1 pb-3">
-          <!-- product brand -->
           <h3>Hewlett Packard (HP)</h3>
         </div>
         <!--  If there are diffrent colors for the product -->
@@ -121,17 +121,65 @@
           </div>
           <div class="d-flex justify-content-start">
             <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-            <input type="color" id="favcolor" name="favcolor" value="">
+            <input type="color" id="favcolor" name="favcolor">
             <input type="color" id="favcolor" name="favcolor" value="#99ff33">
           </div>
         </div>
-        <div class="product--price--box">
-          <div class="product--price row justify-content-center">
-            <!-- plain product price -->
-            <p id="plain-price" class="m-0 h2">300000</p>
-            <!-- **************************************************** -->
+        <!-- product price -->
+        <div class="product--price--box pt-4">
+          <p class="h3" style="font-family:IRANYekan, sans-serif; font-weight:600; color:rgb(84, 82, 82);">
+            قیمت:
+          </p>
+          <!-- plain product price -->
+          <!-- * If There is no discount for the product, 'plain-price--block' must be ignored -->
+          <div class="plain--price--block d-flex align-items-center pb-2">
+            <p id="plain-price" class="m-0 px-2 h2">300000</p>
+            <div id="discount--box" class="d-flex justify-content-center align-items-center mx-1">
+              <p id="discount--precent" class="m-0">
+                <span id="discount--value"></span><span>%</span>
+              </p>
+            </div>
+          </div>
+          <div class="product--end--price d-flex justify-content-start align-items-center flex-wrap">
+            <!-- end product price (after discount) -->
+            <p id="end-price" class="px-2">290000</p>
+            <p id="currency" class="px-1">تومان</p>
           </div>
         </div>
+        <!-- cart -->
+        <!-- * add to cart button -->
+        <div class="add--to--cart d-flex justify-content-start align-items-center flex-wrap">
+          <div class="product--cart--number d-flex justify-content-start align-items-center ms-3">
+            <div id="number-up-div" class="d-flex align-items-end">
+              <ion-icon id="number-up-button" name="caret-up-outline" style="font-size: 30px; cursor: pointer; color: green;"></ion-icon>
+              <!-- Following span could be used for the tooltip -->
+              <!-- <small id="number-up-text" class="text-center">اضافه کردن</small> -->
+            </div>
+            <!-- *HINT* 'data-product-id' must be set as the product unique id to let the server know what product we want to add to the cart -->
+            <div>
+              <input disabled id="product--cart-input" class="mx-1" data-product-id="222" type="text" value="1">
+            </div>
+            <div id="number-down-div" class="d-flex align-items-end">
+              <ion-icon id="number-down-button" name="caret-down-outline" style="font-size: 30px; cursor: pointer; color: red;"></ion-icon>
+              <!-- Following span could be used for the tooltip -->
+              <!-- <span id="number-down-text">کم کردن</span> -->
+            </div>
+          </div>
+          <div class="add--to-cart--button--box ms-4">
+            <button type="button" id="cart--button" class="btn btn-primary d-flex justify-content-center align-items-center">
+              <ion-icon style="font-size: 26px;" name="cart"></ion-icon>&nbsp&nbsp
+              <span style="font-size: 20px; font-family: IRANYekan, sans-serif;">اضافه</span>
+            </button>
+          </div>
+          <!-- * If the product already in the cart, following button appear to delete the product from the cart using ajax -->
+          <!-- * following "input" 'value' and 'data-product-id' set by server to show how many product of this kind is already in the cart -->
+          <input type="hidden" data-product-id="56" name="current-product-in-cart" value="1">
+          <div id="delete-button" class="delete--from--cart btn btn-danger d-flex justify-content-center align-items-center" style="font-size: 20px; font-family: IRANYekan, sans-serif;">
+            <p class="m-0">حذف</p>&nbsp&nbsp
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+        <!-- End of prodcut detail -->
       </div>
       <!-- * product images part -->
       <div class="product--image col-lg-5 col-md-6 col-sm-12 col-12">
@@ -170,14 +218,17 @@
 <!-- **** 'base_scripts' block in 'base.html' -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<!-- <script src="./js/main.js"></script> -->
-<script src="./js/product.js"></script>
+<script src="/js/csrftoken.js" type="module"></script>
 <!-- **** 'base_scripts' block in 'base.html' -->
 
 
 
 <!-- ** 'scripts' block in 'base.html' -->
+<!-- <script src="./js/main.js"></script> -->
+<script src="./js/product.js" type="module"></script>
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- ** 'scripts' block in 'base.html' -->
 
 

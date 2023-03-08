@@ -1,8 +1,11 @@
+// * When import a module, we should import the script with '.js' extension. JS module rules are weird!
+import getCookie from './csrftoken.js';
+
+
 // *** Send 'pr-form' data to server using Ajax ***
 // * NOTE: When validating forms using javascript, it is better to to let JS do all the validation like check if the input is email, required and etc
 let prForm = document.forms['pr-form'];
 // let prForm = document.querySelector('[name="pr-form"]')
-
 // * Following function used to check if input is a valid email
 const validateEmail = (email) => {
     return String(email)
@@ -15,29 +18,25 @@ const validateEmail = (email) => {
 // ** Send data to server **
 // * Helper function using 'async'
 let sendPrData = async (url=new String, form=new FormData ,errorMsg=new String) => {
-    let response = await fetch(input=url, init={
+    const csrftoken = getCookie('csrftoken');
+    let response = await fetch(url, {
         method: 'POST',
         body: form,
-        credentials: "same-origin",
-        mode: "cors",
+        credentials: 'include',
+        mode: 'cors', // Can send CSRF token to another domain.
+        headers: {
+            'X-CSRFToken': csrftoken,
+          },
     })
+    console.log(response);
     if (response.status !== 200){
         return Promise.reject(errorMsg);
     }
     return await response.json();
 }
 
-// sendData('https://jsonplaceholder.typicode.com/todos/144444444444444444444')
-// .then(
-//     data => {
-//         console.log(data);
-//     }
-// )
-// .catch(err => {
-//     console.log(err);
-// })
 
-
+// * This Eventlistener used for submitting the PrForm and validate user data in front-end
 prForm.addEventListener('submit', e =>{
     e.preventDefault();
     let form = new FormData(prForm);
@@ -80,7 +79,7 @@ prForm.addEventListener('submit', e =>{
         document.getElementById('content-input').style.borderColor = '#dee2e6';
 
         // Send data to server using ajax
-        sendPrData(url='http://127.0.0.1:8000/', form=form, errorMsg='اطلاعات ارسال نشد')
+        sendPrData('http://127.0.0.1:8000/pr/', form, 'اطلاعات ارسال نشد')
         // sendPrData(url='http://ip.jsontest.com/', form=form, errorMsg='اطلاعات ارسال نشد')
         .then(jsonData => {
             console.log(jsonData);
