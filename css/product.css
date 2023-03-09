@@ -106,3 +106,8 @@ input[type='color']{
     /* width: 450px;
     height: 320px; */
 }
+
+#carouselExampleControls{
+    width: 200px;
+    height: 145px;
+}

@@ -19,20 +19,27 @@ const validateEmail = (email) => {
 // * Helper function using 'async'
 let sendPrData = async (url=new String, form=new FormData ,errorMsg=new String) => {
     const csrftoken = getCookie('csrftoken');
-    let response = await fetch(url, {
-        method: 'POST',
-        body: form,
-        credentials: 'include',
-        mode: 'cors', // Can send CSRF token to another domain.
-        headers: {
-            'X-CSRFToken': csrftoken,
-          },
-    })
-    console.log(response);
-    if (response.status !== 200){
-        return Promise.reject(errorMsg);
+    try{
+        let response = await fetch(url, {
+            method: 'POST',
+            body: form,
+            credentials: 'include',
+            mode: 'cors', // Can send CSRF token to another domain.
+            headers: {
+                'X-CSRFToken': csrftoken,
+            },
+        })
+        console.log(response);
+        if (response.status !== 200){
+            return Promise.reject(errorMsg);
+        }
+        return await response.json();
     }
-    return await response.json();
+    catch(err){
+        if(err instanceof TypeError){
+            return Promise.reject('اتصال با سرور برقرار نشد');
+        }
+    }
 }
 
 
