@@ -117,7 +117,7 @@
                 <label class="cart--product-line-price">مجموع</label>
             </div> -->
             <div id="cart--title" class="d-flex justify-content-center align-items-center text-center">
-                <table class="my-4">
+                <table id="cart--product--list" class="my-4">
                     <tr class="cart--columns">
                         <th style="width: 15%;">تصویر</th>
                         <th style="width: 20%;">محصول</th>
@@ -143,13 +143,12 @@
                             </div>
                         </td>
                         <!-- Product unit price (end price) -->
-                        <td>
-                            <div>
-                                <p class="my-0">12.99</p>
+                        <td class="cart--unit--price--column">
+                            <div class="cart--unit--price--box">
+                                <p class="cart--unit-price--value my-0">30000</p>
                             </div>
                         </td>
                         <!-- Product quantity in the cart -->
-                        <!-- NOTE: To change or remove product from cart, set the 'data-product-id' attribute value to the unique 'product_id' by the server -->
                         <td>
                             <div class="cart--change--quantity d-flex justify-content-center align-items-center">
                                 <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
@@ -162,88 +161,90 @@
                         <!-- Delete product from the cart -->
                         <td>
                             <div>
-                                <i class="bi bi-trash cart--remove--button" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
                             </div>
                         </td>
                         <!-- Total price of the product -->
-                        <td>
-                            <div>
-                                <p class="my-0">23$</p>
+                        <td class="cart--total--price--column">
+                            <div class="cart--total--price--box">
+                                <p class="my-0 cart--total--price--value">60000</p>
                             </div>
                         </td>
                     </tr>
                     <!-- * (End) Every product put in this block -->
+
+                    <tr>
+                        <!-- Product image -->
+                        <td>
+                            <div>
+                                <img src="./images/microwave_PNG101664.png" class="cart--image" alt="">
+                            </div>
+                        </td>
+                        <!-- Product name -->
+                        <td>
+                            <div class="px-2 d-flex justify-content-center align-items-center flex-column">
+                                <h5 class="m-0 h5 pb-1">LG</h5>
+                                <p class="m-0 pt-1">مایکرویو دو کاره LG</p>
+                            </div>
+                        </td>
+                        <!-- Product unit price (end price) -->
+                        <td class="cart--unit--price--column">
+                            <div class="cart--unit--price--box">
+                                <p class="cart--unit-price--value my-0">50000</p>
+                            </div>
+                        </td>
+                        <!-- Product quantity in the cart -->
+                        <td>
+                            <div class="cart--change--quantity d-flex justify-content-center align-items-center">
+                                <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
+                                <i class="bi bi-dash-circle quantity--down" id="cart--quantity-down-1" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                <!-- Set 'value' attribute by the server -->
+                                <input disabled class="cart--product--quantity mx-2" data-product-id="30" type="text" value="3">
+                                <i class="bi bi-plus-circle quantity--up" id="cart--quantity-up-1" style="font-size: 20px; color: green; cursor: pointer;"></i>
+                            </div>
+                        </td>
+                        <!-- Delete product from the cart -->
+                        <td>
+                            <div>
+                                <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                            </div>
+                        </td>
+                        <!-- Total price of the product -->
+                        <td class="cart--total--price--column">
+                            <div class="cart--total--price--box">
+                                <p class="my-0 cart--total--price--value">150000</p>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
 
 
-
-            <div id="cart--product--box">
-                <div class="cart--product d-flex align-items-center flex-wrap">
-                    <div class="cart--product-image">
-                        <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-                    </div>
-                    <div class="cart--product-details">
-                        <div class="cart--product-title">Dingo Dog Bones</div>
-                        <p class="cart--product-description">The best dog bones of all time. Holy crap. Your dog will be begging
-                            for these things! I got curious once and ate one myself. I'm a fan.</p>
-                    </div>
-                    <div class="cart--product-price">12.99</div>
-                    <div class="cart--product-quantity">
-                        <input type="number" value="2" min="1">
-                    </div>
-                    <div class="cart--product-removal">
-                        <button class="cart--remove-product">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="cart--product-line-price">25.98</div>
-                </div>
-            </div>
-
-            <div id="cart--product--box">
-                <div class="cart--product">
-                    <div class="cart--product-image">
-                        <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-                    </div>
-                    <div class="cart--product-details">
-                        <div class="cart--product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-                        <p class="cart--product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am
-                            while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-                    </div>
-                    <div class="cart--product-price">45.99</div>
-                    <div class="cart--product-quantity">
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <div class="cart--product-removal">
-                        <button class="cart--remove-product">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="cart--product-line-price">45.99</div>
-                </div>
-            </div>
-
+            <!-- * Backend set initial value of the below tags -->
             <div class="totals">
                 <div class="totals-item">
-                    <label>Subtotal</label>
-                    <div class="totals-value" id="cart-subtotal">71.97</div>
+                    <label>تعداد محتویات</label>
+                    <div class="totals-value" id="cart-items">5</div>
                 </div>
                 <div class="totals-item">
-                    <label>Tax (5%)</label>
-                    <div class="totals-value" id="cart-tax">3.60</div>
+                    <label>مجموع قیمت</label>
+                    <div class="totals-value" id="cart-subtotal">210000</div>
                 </div>
                 <div class="totals-item">
-                    <label>Shipping</label>
-                    <div class="totals-value" id="cart-shipping">15.00</div>
+                    <label>مالیات</label>
+                    <div class="totals-value" id="cart-tax">-</div>
+                </div>
+                <div class="totals-item">
+                    <label>هزینه ارسال</label>
+                    <div class="totals-value" id="cart-shipping">4500</div>
                 </div>
                 <div class="totals-item totals-item-total">
-                    <label>Grand Total</label>
+                    <label>مجموع کل</label>
                     <div class="totals-value" id="cart-total">90.57</div>
                 </div>
             </div>
 
-            <button class="checkout">Checkout</button>
+            <button class="checkout">ثبت سفارش</button>
 
         </div>
     </main>
@@ -278,6 +279,7 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/cart.js" type="module"></script>
 <!-- **** 'base_scripts' block in 'base.html' -->
 
