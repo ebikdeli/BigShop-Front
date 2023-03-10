@@ -12,10 +12,64 @@ h1{
   font-family: IRANYekan, sans-serif;
 }
 
-label{
-    color: rgb(34, 34, 34) !important;
-    font-size: 26px;
+
+/* * Cart product table section */
+table{
+  width: 100%;
+  text-align: center;
 }
+
+tr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px !important;
+  border-color: rgb(216, 220, 216) !important;
+  border-style: solid !important;
+}
+
+th{
+  height: 100px;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(68, 69, 68);
+  
+}
+
+td{
+  color: rgb(105, 104, 104);
+  font-weight: 600;
+}
+
+
+.cart--columns{
+  font-size: 26px;
+  font-weight: 600;
+  color: grey;
+}
+
+.cart--product--quantity{
+  width: 30px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+/* label{
+    color: rgb(62, 61, 61) !important;
+    font-size: 26px;
+} */
+
+
+.cart--image{
+  width: 160px;
+  height: 120px;
+}
+
+/* table, th, td{
+  border: #6b6 1px solid;
+} */
 
 .cart--product-image {
     float: left;

@@ -86,7 +86,7 @@ prForm.addEventListener('submit', e =>{
         document.getElementById('content-input').style.borderColor = '#dee2e6';
 
         // Send data to server using ajax
-        sendPrData('http://127.0.0.1:8000/pr/', form, 'اطلاعات ارسال نشد')
+        sendPrData('http://127.0.0.1:8000/pr', form, 'اطلاعات ارسال نشد')
         // sendPrData(url='http://ip.jsontest.com/', form=form, errorMsg='اطلاعات ارسال نشد')
         .then(jsonData => {
             console.log(jsonData);

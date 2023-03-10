@@ -1,3 +1,60 @@
+import {addOne, minuseOne} from './functions.js';
+import {sendPostData} from './ajax.js';
+
+
+// Change product quantity
+const changeProductQuantity = document.querySelector('.cart--change--quantity');
+
+changeProductQuantity.addEventListener('click', e => {
+  // * Add quantity
+  if(e.target.classList.contains('quantity--up')){
+    // console.log('quantity up');
+    Array.from(e.target.parentNode.children).forEach((elem) => {
+      if(elem.nodeName == 'INPUT'){
+        const data = {
+          product_id: elem.getAttribute('data-product-id'), 
+          quantity: Number(elem.value) + 1}
+        sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
+        .then(data => {
+          if(data.status == '200'){
+            console.log(data);
+            addOne(elem, 15);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        
+      }
+    })
+  }
+  // * Minus quantity
+  if(e.target.classList.contains('quantity--down')){
+    // console.log('quantity down');
+    Array.from(e.target.parentNode.children).forEach((elem) => {
+      if(elem.nodeName == 'INPUT'){
+        const data = {
+          product_id: elem.getAttribute('data-product-id'), 
+          quantity: Number(elem.value) - 1}
+        sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
+        .then(data => {
+          if(data.status == '200'){
+            console.log(data);
+            minuseOne(elem);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+      }
+    })
+  }
+})
+
+
+// * Delete Item
+
+
 /* Set rates + misc */
 var taxRate = 0.05;
 var shippingRate = 15.00; 
