@@ -105,20 +105,73 @@
     <!-- ******* 'content' block in 'base.html' ******* -->
     <main class="m-auto py-5" style="font-family: IRANYekan, sans-serif;">
         <!-- * If there is no order show below block -->
-        <!-- <div class="mx-auto my-3 text-center">
-            <img src="./images/empty-cart.png" style="width: 50%; height: auto;" alt="">
-        </div>
-        <h3 class="my-3 text-center">سفارشی ثبت نشده</h3> -->
-        <!-- * If there is no order show below block -->
-
-        <h1 class="display-4">سفارش</h1>
-
-        <div class="order-body">
-            <div class="order-payment-block">
-
+        <div id="no--order--exist">
+            <!-- <div class="mx-auto my-3 text-center">
+                <img src="./images/empty-cart.png" style="width: 50%; height: auto;" alt="">
             </div>
-            <div class="order-product-block">
+        <h3 class="my-3 text-center">سفارشی ثبت نشده</h3> -->
+        </div>
+        <!-- * If there is no order show above block -->
 
+        <div id="order--exist">
+            <h1 class="display-4 pb-4 text-center">سفارش</h1>
+            <div class="order-body">
+
+                <div class="order-payment-block">
+                    <div class="order-payment">
+                        <div class="py-3 px-2 d-flex justify-content-start align-items-end flex-column"">
+                            <!-- * Server will put the data in the <span> tag -->
+                            <div class="py-2 order-payment-row d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
+                                <p class="my-0 px-1">:تعداد</p>
+                                <span class="px-1">5</span>
+                            </div>
+                            <div class="py-2 order-payment-row d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
+                                <p class="my-0 px-1">:قیمت کل (تومان)</p>
+                                <span class="px-1">210000</span>
+                            </div>
+                            <div class="py-2 order-payment-row d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
+                                <p class="my-0 px-1">:مالیات (تومان)</p>
+                                <span class="px-1">10500</span>
+                            </div>
+                            <div class="py-2 order-payment-row d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
+                                <p class="my-0 px-1">:(تومان) هزینه ارسال</p>
+                                <span class="px-1">4500</span>
+                            </div>
+                            <div class="py-2 order-payment-row text-primary d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
+                                <p class="my-0 px-1" style="font-size: 21px;">:(تومان) مجموع کل
+                                </p>
+                                <span class="px-1" style="font-size: 21px;">225000</span>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <button class="btn btn-success mx-auto mt-1 mb-3 d-flex justify-content-around align-items-center" id="order--payment--button" style="font-size: 22px; direction: rtl;">
+                                <p class="my-0 px-2">پرداخت</p>
+                                <i class="bi bi-credit-card-2-back d-block px-2"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-product-block mx-auto">
+                    <!-- Following 'div' works as table header -->
+                    <div class="order--product--header d-flex justify-content-center align-items-center" style="width: 80%;">
+                        <div style="width: 25%;" class="order--product--image">
+                            <p class="m-0">تصویر</p>
+                        </div>
+                        <div style="width: 30%;" class="order--product--name">
+                            <p class="m-0">نام محصول</p>
+                        </div>
+                        <div style="width: 10%;" class="order--product--unit">
+                            <p class="m-0">قیمت واحد (تومان)</p>
+                        </div>
+                        <div style="width: 10%;" class="order--product--unit">
+                            <p class="m-0">تعداد</p>
+                        </div>
+                        <div style="width: 5%;" class="order--product--unit">
+                            <p class="m-0">مجموع (تومان)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
