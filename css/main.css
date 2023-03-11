@@ -73,7 +73,7 @@ body{
 }
 
 .background1{
-    background-image: url('./images/iphone_11_PNG15.png');
+    background-image: url('../images/iphone_11_PNG15.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,7 +82,7 @@ body{
 }
 
 .background2{
-    background-image: url('./images/laptop_PNG101812.png');
+    background-image: url('../images/laptop_PNG101812.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -91,7 +91,7 @@ body{
 }
 
 .background3{
-    background-image: url('./images/server_PNG35.png');
+    background-image: url('../images/server_PNG35.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
