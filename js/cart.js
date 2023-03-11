@@ -1,7 +1,14 @@
 // Base cart template and script:
 // https://codepen.io/justinklemm/pen/kyMjjv
-import {addOne, minuseOne} from './functions.js';
+import {addOne, minuseOne, checkCartQuantity} from './functions.js';
 import {sendPostData} from './ajax.js';
+
+
+// * When page first load, check if cart is empty or not
+let emptyCartElem = document.querySelector('.cart--no--items');
+let cartExistElem = document.querySelector('.cart--items-exists');
+let totalItemsElem = document.querySelector('#cart-items');
+checkCartQuantity(totalItemsElem, emptyCartElem, cartExistElem);
 
 
 // * Funtions to 'remove', 'update Quantity' and 'reCalculate' items for the cart
@@ -43,6 +50,9 @@ function recalculateCart()
       $('.checkout').fadeIn(fadeTime);
     }
     $('.totals-value').fadeIn(fadeTime);
+
+    // Check if cart is empty
+    checkCartQuantity(totalItemsElem, emptyCartElem, cartExistElem);
   });
 }
 

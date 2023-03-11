@@ -11,21 +11,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/cart.css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!-- * To use bootstrap icons, we need to import another cdn into our template -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-        <!-- **** 'base_head' block in 'base.html' -->
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- **** 'base_head' block in 'base.html' -->
 
 
 
     <!-- ***** 'head' block in 'base.html' -->
-
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/cart.css">
     <!-- ***** 'head' block in 'base.html' -->
 
 
@@ -105,166 +102,171 @@
 
     <!-- ******* 'content' block in 'base.html' ******* -->
     <main class="m-auto py-5" style="font-family: IRANYekan, sans-serif;">
+
         <!-- * If cart is empty show below block -->
-        <!-- <div class="mx-auto my-3 text-center">
-            <img src="./images/empty-cart.png" style="width: 50%; height: auto;" alt="">
+        <div class="cart--no--items">
+            <div class="mx-auto my-5 text-center">
+                <img src="./images/empty-cart.png" style="width: 60%; height: auto;" alt="">
+            </div>
+            <h3 class="my-5 text-center">سبد خرید خالی است</h3>
         </div>
-        <h3 class="my-3 text-center">سبد خرید خالی است</h3> -->
-        <!-- * If cart is empty show below block -->
-        <h1 class="display-5">سبد خرید</h1>
+        <!-- * If cart is empty show above block -->
 
-        <div class="shopping-cart">
-            <!-- <div class="column-labels">
-                <label class="cart--product-image">تصویر</label>
-                <label class="cart--product-details">نام محصول</label>
-                <label class="cart--product-price">قیمت</label>
-                <label class="cart--product-quantity">تعداد</label>
-                <label class="cart--product-removal">حذف</label>
-                <label class="cart--product-line-price">مجموع</label>
-            </div> -->
-            <div id="cart--title" class="d-flex justify-content-center align-items-center text-center">
-                <table id="cart--product--list" class="my-4">
-                    <tr class="cart--columns">
-                        <th style="width: 15%;">تصویر</th>
-                        <th style="width: 20%;">محصول</th>
-                        <th style="width: 10%;">قیمت واحد (تومان)</th>
-                        <th style="width: 10%;">تعداد</th>
-                        <th style="width: 4%;">حذف</th>
-                        <th style="width: 10%;"> (تومان) مجموع</th>
-                    </tr>
+        <div class="cart--items-exists">
+            <h1 class="display-5">سبد خرید</h1>
 
-                    <!-- * (Start) Every product put in this block -->
-                    <tr>
-                        <!-- Product image -->
-                        <td>
-                            <div>
-                                <img src="./images/iphone_11_PNG15.png" class="cart--image" alt="">
-                            </div>
-                        </td>
-                        <!-- Product name -->
-                        <td>
-                            <div class="px-2 d-flex justify-content-center align-items-center flex-column">
-                                <h5 class="m-0 h5 pb-1">Samsung</h5>
-                                <p class="m-0 pt-1">s23 سامسونگ گالاکسی جدید</p>
-                            </div>
-                        </td>
-                        <!-- Product unit price (end price) -->
-                        <td class="cart--unit--price--column">
-                            <div class="cart--unit--price--box">
-                                <p class="cart--unit-price--value my-0">30000</p>
-                            </div>
-                        </td>
-                        <!-- Product quantity in the cart -->
-                        <td>
-                            <div class="cart--change--quantity d-flex justify-content-center align-items-center">
-                                <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
-                                <i class="bi bi-dash-circle quantity--down" id="cart--quantity-down-1" style="font-size: 20px; color: red; cursor: pointer;"></i>
-                                <!-- Set 'value' attribute by the server -->
-                                <input disabled class="cart--product--quantity mx-2" data-product-id="30" type="text" value="2">
-                                <i class="bi bi-plus-circle quantity--up" id="cart--quantity-up-1" style="font-size: 20px; color: green; cursor: pointer;"></i>
-                            </div>
-                        </td>
-                        <!-- Delete product from the cart -->
-                        <td>
-                            <div>
-                                <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
-                            </div>
-                        </td>
-                        <!-- Total price of the product -->
-                        <td class="cart--total--price--column">
-                            <div class="cart--total--price--box">
-                                <p class="my-0 cart--total--price--value">60000</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- * (End) Every product put in this block -->
+            <div class="shopping-cart">
+                <!-- <div class="column-labels">
+                    <label class="cart--product-image">تصویر</label>
+                    <label class="cart--product-details">نام محصول</label>
+                    <label class="cart--product-price">قیمت</label>
+                    <label class="cart--product-quantity">تعداد</label>
+                    <label class="cart--product-removal">حذف</label>
+                    <label class="cart--product-line-price">مجموع</label>
+                </div> -->
+                <div id="cart--title" class="d-flex justify-content-center align-items-center text-center">
+                    <table id="cart--product--list" class="my-4">
+                        <tr class="cart--columns">
+                            <th style="width: 15%;">تصویر</th>
+                            <th style="width: 20%;">محصول</th>
+                            <th style="width: 10%;">قیمت واحد (تومان)</th>
+                            <th style="width: 10%;">تعداد</th>
+                            <th style="width: 4%;">حذف</th>
+                            <th style="width: 10%;"> (تومان) مجموع</th>
+                        </tr>
 
-                    <tr>
-                        <!-- Product image -->
-                        <td>
-                            <div>
-                                <img src="./images/microwave_PNG101664.png" class="cart--image" alt="">
-                            </div>
-                        </td>
-                        <!-- Product name -->
-                        <td>
-                            <div class="px-2 d-flex justify-content-center align-items-center flex-column">
-                                <h5 class="m-0 h5 pb-1">LG</h5>
-                                <p class="m-0 pt-1">مایکرویو دو کاره LG</p>
-                            </div>
-                        </td>
-                        <!-- Product unit price (end price) -->
-                        <td class="cart--unit--price--column">
-                            <div class="cart--unit--price--box">
-                                <p class="cart--unit-price--value my-0">50000</p>
-                            </div>
-                        </td>
-                        <!-- Product quantity in the cart -->
-                        <td>
-                            <div class="cart--change--quantity d-flex justify-content-center align-items-center">
-                                <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
-                                <i class="bi bi-dash-circle quantity--down" id="cart--quantity-down-1" style="font-size: 20px; color: red; cursor: pointer;"></i>
-                                <!-- Set 'value' attribute by the server -->
-                                <input disabled class="cart--product--quantity mx-2" data-product-id="30" type="text" value="3">
-                                <i class="bi bi-plus-circle quantity--up" id="cart--quantity-up-1" style="font-size: 20px; color: green; cursor: pointer;"></i>
-                            </div>
-                        </td>
-                        <!-- Delete product from the cart -->
-                        <td>
-                            <div>
-                                <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
-                            </div>
-                        </td>
-                        <!-- Total price of the product -->
-                        <td class="cart--total--price--column">
-                            <div class="cart--total--price--box">
-                                <p class="my-0 cart--total--price--value">150000</p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+                        <!-- * (Start) Every product put in this block -->
+                        <tr>
+                            <!-- Product image -->
+                            <td>
+                                <div>
+                                    <img src="./images/iphone_11_PNG15.png" class="cart--image" alt="">
+                                </div>
+                            </td>
+                            <!-- Product name -->
+                            <td>
+                                <div class="px-2 d-flex justify-content-center align-items-center flex-column">
+                                    <h5 class="m-0 h5 pb-1">Samsung</h5>
+                                    <p class="m-0 pt-1">s23 سامسونگ گالاکسی جدید</p>
+                                </div>
+                            </td>
+                            <!-- Product unit price (end price) -->
+                            <td class="cart--unit--price--column">
+                                <div class="cart--unit--price--box">
+                                    <p class="cart--unit-price--value my-0">30000</p>
+                                </div>
+                            </td>
+                            <!-- Product quantity in the cart -->
+                            <td>
+                                <div class="cart--change--quantity d-flex justify-content-center align-items-center">
+                                    <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
+                                    <i class="bi bi-dash-circle quantity--down" id="cart--quantity-down-1" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                    <!-- Set 'value' attribute by the server -->
+                                    <input disabled class="cart--product--quantity mx-2" data-product-id="30" type="text" value="2">
+                                    <i class="bi bi-plus-circle quantity--up" id="cart--quantity-up-1" style="font-size: 20px; color: green; cursor: pointer;"></i>
+                                </div>
+                            </td>
+                            <!-- Delete product from the cart -->
+                            <td>
+                                <div>
+                                    <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                </div>
+                            </td>
+                            <!-- Total price of the product -->
+                            <td class="cart--total--price--column">
+                                <div class="cart--total--price--box">
+                                    <p class="my-0 cart--total--price--value">60000</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- * (End) Every product put in this block -->
 
-
-            <!-- * Backend set initial value of the below tags -->
-            <div class="totals mx-auto py-3 d-flex justify-content-center align-items-center flex-column col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
-                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
-                    <label class="px-1">:(عدد) تعداد </label>
-                    <div class="totals-value px-1" id="cart-items">5</div>
+                        <tr>
+                            <!-- Product image -->
+                            <td>
+                                <div>
+                                    <img src="./images/microwave_PNG101664.png" class="cart--image" alt="">
+                                </div>
+                            </td>
+                            <!-- Product name -->
+                            <td>
+                                <div class="px-2 d-flex justify-content-center align-items-center flex-column">
+                                    <h5 class="m-0 h5 pb-1">LG</h5>
+                                    <p class="m-0 pt-1">مایکرویو دو کاره LG</p>
+                                </div>
+                            </td>
+                            <!-- Product unit price (end price) -->
+                            <td class="cart--unit--price--column">
+                                <div class="cart--unit--price--box">
+                                    <p class="cart--unit-price--value my-0">50000</p>
+                                </div>
+                            </td>
+                            <!-- Product quantity in the cart -->
+                            <td>
+                                <div class="cart--change--quantity d-flex justify-content-center align-items-center">
+                                    <!-- NOTE: For javascript and server to know what product quantity must choosen, in 'for-loop' for the product, attach a counter at the end of 'cart--quantity-up-<counter-number>'-->
+                                    <i class="bi bi-dash-circle quantity--down" id="cart--quantity-down-1" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                    <!-- Set 'value' attribute by the server -->
+                                    <input disabled class="cart--product--quantity mx-2" data-product-id="30" type="text" value="3">
+                                    <i class="bi bi-plus-circle quantity--up" id="cart--quantity-up-1" style="font-size: 20px; color: green; cursor: pointer;"></i>
+                                </div>
+                            </td>
+                            <!-- Delete product from the cart -->
+                            <td>
+                                <div>
+                                    <i class="bi bi-trash cart--remove--icon" data-product-id="30" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                                </div>
+                            </td>
+                            <!-- Total price of the product -->
+                            <td class="cart--total--price--column">
+                                <div class="cart--total--price--box">
+                                    <p class="my-0 cart--total--price--value">150000</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="totals--separator"></div>
-                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
-                    <label class="px-1">:(تومان) مجموع قیمت</label>
-                    <div class="totals-value px-1" id="cart-subtotal">210000</div>
-                </div>
-                <div class="totals--separator"></div>
-                <div class="ttotals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
-                    <label class="px-1">:(تومان) مالیات</label>
-                    <div class="totals-value px-1" id="cart-tax">10500</div>
-                </div>
-                <div class="totals--separator"></div>
-                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
-                    <label class="px-1">:(تومان) هزینه ارسال</label>
-                    <div class="totals-value px-1" id="cart-shipping">4500</div>
-                </div>
-                <div class="totals--separator"></div>
-                <div class="totals-item totals-item-total py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
-                    <label class="px-1 " style="color: blue; font-size: 21px;">:(تومان) مجموع کل</label>
-                    <div class="totals-value px-1" id="cart-total" style="color: blue; font-size: 21px;">225000</div>
-                </div>
-            </div>
 
-            <!-- * Cart checkout button -->
-            <div class="mx-auto mt-5" id="cart-checkout--box">
-                <a href="#">
-                    <button class="checkout btn btn-success d-flex justify-content-between align-items-center"> 
-                        <i class="bi bi-check-lg me-1"></i>
-                        <span class="ms-1">ثبت سفارش</span>
-                    </button>
-                </a>
-            </div>
+
+                <!-- * Backend set initial value of the below tags -->
+                <div class="totals mx-auto py-3 d-flex justify-content-center align-items-center flex-column col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
+                    <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                        <label class="px-1">:(عدد) تعداد </label>
+                        <div class="totals-value px-1" id="cart-items">5</div>
+                    </div>
+                    <div class="totals--separator"></div>
+                    <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                        <label class="px-1">:(تومان) مجموع قیمت</label>
+                        <div class="totals-value px-1" id="cart-subtotal">210000</div>
+                    </div>
+                    <div class="totals--separator"></div>
+                    <div class="ttotals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                        <label class="px-1">:(تومان) مالیات</label>
+                        <div class="totals-value px-1" id="cart-tax">10500</div>
+                    </div>
+                    <div class="totals--separator"></div>
+                    <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                        <label class="px-1">:(تومان) هزینه ارسال</label>
+                        <div class="totals-value px-1" id="cart-shipping">4500</div>
+                    </div>
+                    <div class="totals--separator"></div>
+                    <div class="totals-item totals-item-total py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                        <label class="px-1 " style="color: blue; font-size: 21px;">:(تومان) مجموع کل</label>
+                        <div class="totals-value px-1" id="cart-total" style="color: blue; font-size: 21px;">225000</div>
+                    </div>
+                </div>
+
+                <!-- * Cart checkout button -->
+                <div class="mx-auto mt-5" id="cart-checkout--box">
+                    <a href="#">
+                        <button class="checkout btn btn-success d-flex justify-content-between align-items-center"> 
+                            <i class="bi bi-check-lg me-1"></i>
+                            <span class="ms-1">ثبت سفارش</span>
+                        </button>
+                    </a>
+                </div>
             
-
+            </div>
         </div>
     </main>
     <!-- ******* 'content' block in 'base.html' ******* -->
@@ -295,17 +297,17 @@
 
 <!-- **** 'base_scripts' block in 'base.html' -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="./js/cart.js" type="module"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- **** 'base_scripts' block in 'base.html' -->
 
 
 
 <!-- ** 'scripts' block in 'base.html' -->
-
+<script src="./js/cart.js" type="module"></script>
 <!-- ** 'scripts' block in 'base.html' -->
 
 

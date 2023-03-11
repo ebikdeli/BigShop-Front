@@ -13,14 +13,16 @@ let minuseOne = (inputNode, min=1) => {
 
 
 // Change product quantity
-let changeQuantity = (element=new Node, signal=new String, max=15, min=1) => {
-    if(signal == 'up'){
-        addOne(element, max);
+let checkCartQuantity = (nodeValue=new Node, emptyCartElem=new Node, fullCartElem) => {
+    let value = Number(nodeValue.innerText);
+    if(value > 0){
+        emptyCartElem.classList.add('d-none');
     }
-    else if(signal == 'down'){
-        minuseOne(element, min);
+    else{
+        fullCartElem.remove();
+        emptyCartElem.classList.remove('d-none');
     }
 }
 
 
-export {addOne, minuseOne, changeQuantity};
+export {addOne, minuseOne, checkCartQuantity};
