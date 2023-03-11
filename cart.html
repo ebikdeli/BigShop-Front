@@ -105,6 +105,12 @@
 
     <!-- ******* 'content' block in 'base.html' ******* -->
     <main class="m-auto py-5" style="font-family: IRANYekan, sans-serif;">
+        <!-- * If cart is empty show below block -->
+        <!-- <div class="mx-auto my-3 text-center">
+            <img src="./images/empty-cart.png" style="width: 50%; height: auto;" alt="">
+        </div>
+        <h3 class="my-3 text-center">سبد خرید خالی است</h3> -->
+        <!-- * If cart is empty show below block -->
         <h1 class="display-5">سبد خرید</h1>
 
         <div class="shopping-cart">
@@ -221,30 +227,43 @@
 
 
             <!-- * Backend set initial value of the below tags -->
-            <div class="totals">
-                <div class="totals-item">
-                    <label>تعداد محتویات</label>
-                    <div class="totals-value" id="cart-items">5</div>
+            <div class="totals mx-auto py-3 d-flex justify-content-center align-items-center flex-column col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
+                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                    <label class="px-1">:(عدد) تعداد </label>
+                    <div class="totals-value px-1" id="cart-items">5</div>
                 </div>
-                <div class="totals-item">
-                    <label>مجموع قیمت</label>
-                    <div class="totals-value" id="cart-subtotal">210000</div>
+                <div class="totals--separator"></div>
+                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                    <label class="px-1">:(تومان) مجموع قیمت</label>
+                    <div class="totals-value px-1" id="cart-subtotal">210000</div>
                 </div>
-                <div class="totals-item">
-                    <label>مالیات</label>
-                    <div class="totals-value" id="cart-tax">-</div>
+                <div class="totals--separator"></div>
+                <div class="ttotals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                    <label class="px-1">:(تومان) مالیات</label>
+                    <div class="totals-value px-1" id="cart-tax">10500</div>
                 </div>
-                <div class="totals-item">
-                    <label>هزینه ارسال</label>
-                    <div class="totals-value" id="cart-shipping">4500</div>
+                <div class="totals--separator"></div>
+                <div class="totals-item py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                    <label class="px-1">:(تومان) هزینه ارسال</label>
+                    <div class="totals-value px-1" id="cart-shipping">4500</div>
                 </div>
-                <div class="totals-item totals-item-total">
-                    <label>مجموع کل</label>
-                    <div class="totals-value" id="cart-total">90.57</div>
+                <div class="totals--separator"></div>
+                <div class="totals-item totals-item-total py-1 d-flex justify-content-center align-items-center flex-wrap flex-row-reverse">
+                    <label class="px-1 " style="color: blue; font-size: 21px;">:(تومان) مجموع کل</label>
+                    <div class="totals-value px-1" id="cart-total" style="color: blue; font-size: 21px;">225000</div>
                 </div>
             </div>
 
-            <button class="checkout">ثبت سفارش</button>
+            <!-- * Cart checkout button -->
+            <div class="mx-auto mt-5" id="cart-checkout--box">
+                <a href="#">
+                    <button class="checkout btn btn-success d-flex justify-content-between align-items-center"> 
+                        <i class="bi bi-check-lg me-1"></i>
+                        <span class="ms-1">ثبت سفارش</span>
+                    </button>
+                </a>
+            </div>
+            
 
         </div>
     </main>

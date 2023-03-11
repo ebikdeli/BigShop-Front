@@ -7,7 +7,7 @@ import {sendPostData} from './ajax.js';
 // * Funtions to 'remove', 'update Quantity' and 'reCalculate' items for the cart
 /* Set rates + misc */
 var taxRate = 0.05;
-var shippingRate = 15.00; 
+var shippingRate = 4500; 
 var fadeTime = 300;
 
 /* Recalculate cart */

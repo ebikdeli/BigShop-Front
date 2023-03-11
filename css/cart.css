@@ -62,7 +62,38 @@ td{
   height: 120px;
 }
 
+
+/* * Total Cart calc section */
+.totals{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(225, 227, 227);
+  opacity: 100%;
+  border-radius: 5%;
+}
+
 label{
-    color: rgb(62, 61, 61) !important;
-    font-size: 26px;
+    color: rgb(76, 75, 75);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.totals-value{
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(84, 84, 84);
+}
+
+#cart-checkout--box{
+  width: max-content;
+}
+
+#cart-checkout--box > a{
+  text-decoration: none;
+  color: black;
+}
+
+.checkout i, span{
+  font-size: 20px;
 }
