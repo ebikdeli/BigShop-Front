@@ -1,66 +1,58 @@
-/* * NOTE: In css, 'postion: sticky' only works when we set 'top' attribute. Other attributes like 'bottom', 'lef' and 'right' do not work for this position */
-/* .order-payment-block{
-    position: sticky;
-    top: 5px;
-} */
-
-.order-body{
-    width: 100%;
+#verified-order{
+    max-width: 100%;
 }
 
-.order-product-block{
-    overflow-x: auto;
-}
-
-#order-product-payment-separator{
-    border-top: 1px;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-    width: 100%;
-    border-color: rgb(26, 26, 107);
-    border-style: dotted;
-}
-
-/* * Order products section */
-.order--product--header{
-    color: rgb(3, 3, 175);
-    font-weight: 600;
-    font-size: 24px;
-}
-
-.order--product--row{
-    border-top: 1px;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-    border-color: rgb(180, 178, 178);
+#order--separator{
+    display: block;
+    width: 90%;
+    border-width: 1px 0 0 0;
+    border-color: rgb(55, 54, 54);
     border-style: groove;
 }
 
-.order-product{
-    height: 250px;
+.order--product--list{
+    font-size: 20px;
+    font-weight: 600;
 }
 
-
-/* * Order payment section */
-.order-payment{
-    /* position: absolute; */
-    right: 5px;
-    background-color: rgb(192, 194, 192);
-    color: rgb(74, 74, 74);
-    font-size: 18px;
-    border-radius: 5%;
+a{
+    text-decoration: none !important;
 }
 
-
-#payment--button--separator{
-    padding-top: 13px;
-    border-width: 1px 0 0 0;
-    border-color: black;
-    border-style: solid;
+#back--index{
+    font-size: 20px !important;
 }
 
-#payment--button--separator > a{
-    text-decoration: none;
+#print--page{
+    font-size: 18px !important;
+}
+
+@media only screen and (min-width: 900px){
+    .desktop{
+        width: 15%;
+    }
+}
+
+/* @media only screen and (max-width: 900px) and (min-width: 500px){ */
+@media only screen and (500px <= width <= 900px){
+    .tablet{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .mobile{
+        width: 50%;
+    }
+}
+
+/* * This is used when print the page */
+@media print{
+    .no-print{
+        display: none !important;
+    }
+    #verified-order{
+        width: 300px;
+        height: auto;
+    }
 }
