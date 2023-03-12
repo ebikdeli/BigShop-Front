@@ -105,111 +105,22 @@
     <!-- ******* 'content' block in 'base.html' ******* -->
     <main class="mx-auto my-5 col-md-8 col-sm-6 col-10" style="font-family: IRANYekan, sans-serif;">
 
-        <!-- ****** (Start) order body -->
         <div class="order--body--box text-center">
-            <h2 class="display-4 mb-4" style="color: green;">پرداخت موفقیت آمیز</h2>
-            <h3 class="py-4 h3 text-primary">از خرید شما سپاسگذاریم</h3>
+            <h2 class="display-4 mb-4" style="color: rgb(237, 6, 6);">پرداخت انجام نگرفت</h2>
+            <!-- * Following block will show user the problem with payment -->
+            <h3 class="py-4 h3 text-danger">مشکلی در پرداخت پیش آمده</h3>
+
             <div class="mx-auto my-4 desktop tablet mobile">
-                <img src="./images/success.png" id="verified-order"  alt="">
+                <img src="./images/failure.png" id="verified-order"  alt="">
             </div>
-            
-            <div class="d-flex flex-column justify-content-center align-items-center" id="order--specs"
-                 style="font-size: 20px; font-weight: 600; color:rgb(46, 46, 46);">
-                <div class="my-3">
-                    <span class="ms-1">شماره سفارش:</span>
-                    <span class="me-1" style="text-decoration: solid;">123456</span>
-                </div>
-                <div class="my-3">
-                    <span class="ms-1">مبلغ پرداخت شده:</span>
-                    <span class="me-1">22500000</span>&nbsp;<span>تومان</span>
-                </div>
-                <div class="my-3">
-                    <span class="ms-1">تعداد:</span>
-                    <span class="me-1">5</span>&nbsp;<span>عدد</span>
-                </div>
-            </div>
-
-            <span id="order--separator" class="my-3"></span>
-
-            <h3 class="text-center mt-4 mb-5" style="font-size: 30px; color:rgb(46, 53, 230);">مشخصات محصولات سفارش داده شده</h3>
-            <div class="order--product--list mx-auto mt-2 mb-3 d-flex justify-content-start align-items-center text-center"
-                 style="width: 1000px; height: 30px; overflow-x: auto;">
-                <div class="" style="width: 150px;">
-                    <span>دسته بندی</span>
-                </div>
-                 <div class="" style="width: 250px;">
-                    <span>نام</span>
-                </div>
-                <div class="" style="width: 100px;">
-                    <span>تعداد</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>قیمت واحد (تومان)</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>(تومان) قیمت کل</span>
-                </div>
-            </div>
-            <!-- *** (START) all products come here -->
-            <div class="mx-auto my-5 d-flex justify-content-start align-items-center text-center"
-                 style="width: 1000px; height: 100px; overflow-x: auto;">
-                 <div class="" style="width: 150px;">
-                    <span style="font-size: 16px;">laptop</span>
-                </div>
-                 <div class="" style="width: 250px;">
-                    <span class="d-block my-1" style="font-size: 16px; font-weight:600">Samsung</span>
-                    <span class="d-block my-1" style="font-size: 14px; font-weight:600">laptop </span>
-                </div>
-                <div class="" style="width: 100px;">
-                    <span style="font-size: 18px; font-weight:600">3</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>5000000</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>15000000</span>
-                </div>
-            </div>
-
-            <div class="mx-auto my-5 d-flex justify-content-start align-items-center text-center"
-                 style="width: 1000px; height: 100px; overflow-x: auto;">
-                 <div class="" style="width: 150px;">
-                    <span style="font-size: 16px;">سرور</span>
-                </div>
-                 <div class="" style="width: 250px;">
-                    <span class="d-block my-1" style="font-size: 16px; font-weight:600">Lenovo</span>
-                    <span class="d-block my-1" style="font-size: 14px; font-weight:600">proliant ls-2380 ny 2023</span>
-                </div>
-                <div class="" style="width: 100px;">
-                    <span style="font-size: 18px; font-weight:600">2</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>2500000</span>
-                </div>
-                <div class=""  style="width: 150px;">
-                    <span>7500000</span>
-                </div>
-            </div>
-            <!-- *** (END) all products come here -->
-
-            <span id="order--separator" class="my-3"></span>
 
             <a href="./index.html">
-                <button id="back--index" class="no-print mx-auto mt-3 mb-3 btn btn-primary d-flex justify-content-center align-items-center">
+                <button id="back--index" class="no-print mx-auto mt-5 mb-3 btn btn-primary d-flex justify-content-center align-items-center">
                     <ion-icon class="pe-1" name="return-up-back-outline"></ion-icon>
                     <span class="ps-1">بازگشت به صفحه اصلی</span>
                 </button>
             </a>
-            <button id="print--page" class="no-print mx-auto mt-4 mb-4 btn btn-info d-flex justify-content-center align-items-center"
-                    onclick="window.print()">
-                <i class="bi bi-printer pe-1"></i>
-                <span class="ps-1">پرینت</span>
-            </button>
-
         </div>
-        <!-- ****** (End) order body -->
-
-        
     </main>
     <!-- ******* 'content' block in 'base.html' ******* -->
 
