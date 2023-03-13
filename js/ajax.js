@@ -8,7 +8,7 @@ const sendPostData = async (url=new String, data=new Object, errMsg=new String) 
         let jsonData = data;
         if(!(data instanceof FormData)){
             jsonData = new FormData();
-            jsonData.append('product_data', JSON.stringify(data));
+            jsonData.append('data', JSON.stringify(data));
         }
         const response = await fetch(url, {
             method: 'POST',

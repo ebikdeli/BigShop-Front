@@ -1,19 +1,13 @@
 // * When import a module, we should import the script with '.js' extension. JS module rules are weird!
 import getCookie from './csrftoken.js';
+import { validateEmail } from './functions.js';
 
 
 // *** Send 'pr-form' data to server using Ajax ***
 // * NOTE: When validating forms using javascript, it is better to to let JS do all the validation like check if the input is email, required and etc
 let prForm = document.forms['pr-form'];
 // let prForm = document.querySelector('[name="pr-form"]')
-// * Following function used to check if input is a valid email
-const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
+
 
 // ** Send data to server **
 // * Helper function using 'async'
