@@ -111,6 +111,38 @@ const signUpDataValidation = (email=new String, password=new String, confrimPass
 }
 
 
+// Sign in data validation
+const signInDataValidation = (email, password) => {
+    const emailError = document.querySelector('.signin-email-error');
+    const passwordError = document.querySelector('.signin-password-error');
+    emailError.innerText = '';
+    passwordError.innerText = '';
+    let errors = 0;
+    // Email validation
+    if(email.length < 1 || !validateEmail(email)){
+        if(email.length < 1){
+            emailError.innerText = 'ایمیل خود را وارد کنید';
+            errors += 1;
+        }
+        else if(!validateEmail(email)){
+            emailError.innerText = 'ایمیل خود را به درستی وارد کنید';
+            errors += 1;
+        }
+    }
+    // Password validation
+    if(password.length == 0){
+        passwordError.innerText = 'رمز عبور را وارد کنید';
+        errors += 1;
+    }
+    if(errors == 0){
+        emailError.innerText = '';
+        passwordError.innerText = '';
+        return true;
+    }
+    return false;
+}
+
+
 export {validateEmail, addOne, minuseOne, 
     checkCartQuantity, checkRulesBorder, disabledSubmitRule,
-    signUpDataValidation};
+    signUpDataValidation, signInDataValidation};
