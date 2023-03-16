@@ -112,7 +112,7 @@ input[name="image"]{
 /* * profile-order section */
 
 
-/* * profile-security section */
+/* * profile-security section (START) */
 @media only screen and (width > 650px){
     #profile-password-change-form > div{
         position: relative;
@@ -124,4 +124,4 @@ input[name="image"]{
         flex-flow: column;
     }
 }
-/* * profile-security section */
+/* * profile-security section (END) */
