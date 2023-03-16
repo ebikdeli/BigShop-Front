@@ -119,7 +119,7 @@
                 style="background-color: rgb(228, 231, 231);">
                 <!-- Profile edit box -->
                 <div class="profile-edit d-none active" data-icon-content="profile-edit">
-                    <form action="" method="post">
+                    <form action="" method="post" id="profile-edit-form">
                     <div class="d-flex justify-content-center align-items-center flex-wrap">
                         <!-- ! profile-email -->
                         <div
@@ -198,7 +198,7 @@
                     </div>
                     <!-- submit button -->
                     <div class="my-2 text-center">
-                        <button type="submit" class="btn btn-primary px-4 py-1" style="font-size: 20px;">
+                        <button type="submit" disabled id="profile-edit-submit" class="btn btn-primary px-4 py-1" style="font-size: 20px;">
                             تایید
                         </button>
                     </div>
@@ -265,15 +265,18 @@
                         <h2 class="display-6 ms-auto me-4 my-3">تغییر رمز</h2>
                         <br>
                         <form action="" method="post" class="text-center" id="profile-password-change-form">
+                            <span class="d-block my-2 profile-error profile-security-current-password"></span>
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap">
                                 <label class="me-2 p-0" for="">رمز فعلی</label>
                                 <input type="password" name="password-current" class="py-1">
                             </div>
                             <br><br>
+                            <span class="d-block my-2 profile-error profile-security-new-password"></span>
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap">
                                 <label class="me-2 p-0" for="">رمز جدید</label>
                                 <input type="password" name="password-new" class="py-1">
                             </div>
+                            <span class="d-block my-2 profile-error profile-security-confirm-password"></span>
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap"
                                 style="left: -43px;">
                                 <label class="me-2 p-0" for="">تکرار رمز</label>

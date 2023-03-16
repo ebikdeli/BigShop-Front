@@ -6,7 +6,7 @@
 
 @media only screen and (width < 750px){
     main{
-        height: 1500px;
+        min-height: 600px;
     }
 }
 
@@ -23,6 +23,8 @@
 .profile-icons-list{
     font-size: 30px;
     background-color: rgb(188, 248, 250);
+    position: sticky;
+    top: 5px;
 }
 
 .profile-icons-list > i{
@@ -81,7 +83,8 @@ input[name="image"]{
 
 .profile-error{
     color: red;
-
+    font-size: 18px;
+    font-weight: 600;
 }
 /* * profile-edit section (END) */
 
