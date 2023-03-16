@@ -4,6 +4,12 @@
     }
 }
 
+@media only screen and (width < 750px){
+    main{
+        height: 1500px;
+    }
+}
+
 .profile-content-box > section{
     border-radius: 7px;
 }
@@ -16,10 +22,17 @@
 /* * profile-icon section (START) */
 .profile-icons-list{
     font-size: 30px;
+    background-color: rgb(188, 248, 250);
 }
 
 .profile-icons-list > i{
     cursor: pointer;
+}
+
+.profile-icons-list > i[class*='active']{
+    color: rgb(4, 12, 247);
+    font-weight: 600;
+    font-size: 45px;
 }
 
 @media screen and (width >= 992px ){

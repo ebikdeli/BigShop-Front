@@ -107,19 +107,18 @@
         <div class="profile-content-box mx-auto my-4 col-md-9 col-11 d-flex flex-md-row flex-column">
             <!-- * icon list section -->
             <section
-                class="profile-icons-list m-2 flex-md-grow-0 d-flex flex-md-column justify-content-md-around align-items-md-center px-md-2 py-md-2 flex-row align-items-center justify-content-around px-3 py-1"
-                style="background-color: rgb(188, 248, 250);">
+                class="profile-icons-list m-2 flex-md-grow-0 d-flex flex-md-column justify-content-md-around align-items-md-center px-md-2 py-md-2 flex-row align-items-center justify-content-around px-3 py-1">
                 <!-- <i class="bi bi-person py-md-1 py-0 px-md-0 px-1"></i>
                 <i class="bi bi-box-seam py-md-2 py-0 px-md-0 pe-1 ps-3"></i> -->
-                <i class="bi bi-person"></i>
-                <i class="bi bi-box-seam"></i>
-                <i class="bi bi-key"></i>
+                <i class="bi bi-person active" data-icon-content="profile-edit"></i>
+                <i class="bi bi-box-seam" data-icon-content="profile-orders"></i>
+                <i class="bi bi-key" data-icon-content="profile-security"></i>
             </section>
             <!-- * content section -->
             <section class="profile-content m-2 flex-md-grow-1 p-2 d-flex justify-content-center align-items-center"
                 style="background-color: rgb(228, 231, 231);">
                 <!-- Profile edit box -->
-                <div class="profile-edit d-none active">
+                <div class="profile-edit d-none active" data-icon-content="profile-edit">
                     <form action="" method="post">
                     <div class="d-flex justify-content-center align-items-center flex-wrap">
                         <!-- ! profile-email -->
@@ -206,7 +205,7 @@
                 </form>
                 </div>
 
-                <div class="profile-orders d-none">
+                <div class="profile-orders d-none" data-icon-content="profile-orders">
                     <div class="profile-order-unit mx-5 my-3 d-flex text-center justify-content-center align-items-between flex-column"
                         style="font-size: 18px; font-weight: 600; color:rgb(46, 46, 46);">
                         <div
@@ -261,24 +260,24 @@
                     </div>
                 </div>
 
-                <div class="profile-security d-none">
+                <div class="profile-security d-none" data-icon-content="profile-security">
                     <div class="w-100 d-flex justify-content-center align-items-center flex-column">
                         <h2 class="display-6 ms-auto me-4 my-3">تغییر رمز</h2>
                         <br>
                         <form action="" method="post" class="text-center" id="profile-password-change-form">
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap">
                                 <label class="me-2 p-0" for="">رمز فعلی</label>
-                                <input type="password" name="password-current" class="py-1" id="">
+                                <input type="password" name="password-current" class="py-1">
                             </div>
                             <br><br>
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap">
                                 <label class="me-2 p-0" for="">رمز جدید</label>
-                                <input type="password" name="password-new" class="py-1" id="">
+                                <input type="password" name="password-new" class="py-1">
                             </div>
                             <div class="mb-4 d-flex justify-content-center align-items-center flex-wrap"
                                 style="left: -43px;">
                                 <label class="me-2 p-0" for="">تکرار رمز</label>
-                                <input type="password" name="password-new-confirm" class="py-1" id="">
+                                <input type="password" name="password-new-confirm" class="py-1">
                             </div>
                             <button class="profile-security-button mx-auto my-2 px-4 py-2 btn btn-primary"
                                 style="font-size: 18px;">
