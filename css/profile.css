@@ -23,6 +23,9 @@
 }
 
 @media screen and (width >= 992px ){
+    .profile-icons-list{
+        height: 300px;
+    }
     .profile-content-box{
         min-height: 300px;
     }
@@ -54,7 +57,7 @@ input[name="image"]{
     border: 1px;
     color: aliceblue;
     background-color: rgb(73, 146, 82);
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -71,8 +74,8 @@ input[name="image"]{
 
 
 /* * profile-order section */
-.profile-orders{
-    display: none;
+.profile-order-unit{
+    width: 90%;
 }
 
 .profile-order-id{
@@ -107,3 +110,18 @@ input[name="image"]{
     }
 }
 /* * profile-order section */
+
+
+/* * profile-security section */
+@media only screen and (width > 650px){
+    #profile-password-change-form > div{
+        position: relative;
+        right: 40px;
+    }
+}
+@media only screen and (width <= 650px){
+    #profile-password-change-form > div{
+        flex-flow: column;
+    }
+}
+/* * profile-security section */
