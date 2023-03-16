@@ -1,3 +1,9 @@
+@media only screen and (width >= 750px){
+    main{
+        height: 100vh;
+    }
+}
+
 .profile-content-box > section{
     border-radius: 7px;
 }
@@ -27,12 +33,29 @@
 /* * profile-edit section (START) */
 label{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 7px;
 }
 
 input{
     font-size: 16px;
+    border-color: rgb(211, 211, 238);
+    border-radius: 8px;
+}
+
+input[name="image"]{
+    display: none;
+}
+
+#custom-input-image-button{
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px;
+    color: aliceblue;
+    background-color: rgb(73, 146, 82);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .edit-icon{

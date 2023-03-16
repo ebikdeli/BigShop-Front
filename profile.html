@@ -116,68 +116,89 @@
                 <i class="bi bi-key"></i>
             </section>
             <!-- * content section -->
-            <section class="profile-content m-2 flex-md-grow-1 p-2 d-flex justify-content-center align-items-center" style="background-color: rgb(208, 211, 211);">
+            <section class="profile-content m-2 flex-md-grow-1 p-2 d-flex justify-content-center align-items-center"
+                style="background-color: rgb(228, 231, 231);">
                 <!-- Profile edit box -->
-                <div class="profile-edit w-100">
-                    <div class="d-flex justify-content-center align-items-center flex-column">
-                        <!-- ! email and phone number section  -->
-                        <!-- errors -->
-                        <div class="text-center d-flex justify-content-around align-items-center flex-column">
-                            <div class="profile-error email-error my-1"></div>
-                            <div class="profile-error phone-error my-1"></div>
+                <div class="profile-edit">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap">
+                        <!-- ! profile-email -->
+                        <div
+                            class="col-lg-5 col-md-7 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column">
+                            <label>ایمیل</label>
+                            <div class="d-flex justify justify-content-center align-items-center">
+                                <input type="text" name="email" value="example@gmail.com" class="py-1 px-2 text-center"
+                                    disabled>
+                                <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                            </div>
+                            <div class="profile-error email-error mb-2"></div>
                         </div>
-                        <!-- edit -->
-                        <div class="text-center w-100 mb-4 d-flex justify-content-around align-items-center flex-wrap">
-                            <div class="d-flex justify-content-center align-items-center flex-column col-xl-5 col-lg-6 col-md-10 col-sm-10 col-11 flex-wrap">
-                                <!-- <div class="profile-error email-error my-2"></div> -->
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <label class="pe-2">ایمیل</label>
-                                    <input type="text" name="email" value="example@gmail.com"
-                                    class="py-1 text-center" disabled>
-                                    <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                        <!-- ! profile-phone -->
+                        <div
+                            class="col-lg-5 col-md-7 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column">
+                            <label>شماره تماس</label>
+                            <div class="d-flex justify justify-content-center align-items-center">
+                                <input type="text" name="phone" value="" class="py-1 px-2 text-center" disabled>
+                                <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                            </div>
+                            <div class="profile-error phone-error mb-2"></div>
+                        </div>
+                        <!-- ! profile-first-name -->
+                        <div
+                            class="col-lg-5 col-md-7 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column">
+                            <label>نام</label>
+                            <div class="d-flex justify justify-content-center align-items-center">
+                                <input type="text" name="first-name" value="" class="py-1 px-2 text-center" disabled>
+                                <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                            </div>
+                            <div class="profile-error first-name-error mb-2"></div>
+                        </div>
+                        <!-- ! profile-last-name -->
+                        <div
+                            class="col-lg-5 col-md-7 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column">
+                            <label>نام خانوادگی</label>
+                            <div class="d-flex justify justify-content-center align-items-center">
+                                <input type="text" name="phone" value="" class="py-1 px-2 text-center" disabled>
+                                <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                            </div>
+                            <div class="profile-error last-name-error mb-2"></div>
+                        </div>
+                        <!-- ! profile-address -->
+                        <div
+                            class="col-lg-10 col-md-11 col-sm-12 col-12 d-flex justify-content-center align-items-center flex-column">
+                            <label>آدرس</label>
+                            <div class="d-flex justify justify-content-center align-items-center w-100">
+                                <input type="text" name="address" value="" class="py-1 w-100 text-center" disabled>
+                                <i class="edit-icon bi bi-pen-fill ms-1"></i>
+                            </div>
+                            <div class="profile-error last-name-error mb-2"></div>
+                        </div>
+                        <!-- ! profile-image -->
+                        <div
+                            class="my-4 col-lg-10 col-md-11 col-sm-12 col-12 d-flex justify-content-center align-items-center flex-column">
+                            <label for="">
+                                تصویر
+                            </label>
+                            <div class="mb-3 d-flex justify justify-content-center align-items-center">
+                                <div style="width: 150px; height: 150px;">
+                                    <img src="./images/generic-profile-image.svg" alt=""
+                                        style="width: 100%; height: 100%; border: 1px; border-color: rgb(214, 27, 27); border-radius: 50%">
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center align-items-center flex-column col-xl-6 col-lg-8 col-md-10 col-sm-10 col-11 flex-wrap">
-                                <!-- <div class="profile-error phone-error my-2"></div> -->
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <label class="pe-2">شماره تماس</label>
-                                    <input type="text" name="phone" 
-                                    class="py-1 text-center" disabled>
-                                    <i class="edit-icon bi bi-pen-fill ms-1"></i>
-                                </div>
+                            <!-- When new image uploaded, a thumbnail of new image shown here -->
+                            <div id="new-image-thumbnail"
+                                class="my-1 d-flex justify justify-content-center align-items-center">
+
                             </div>
+                            <label id="custom-input-image-button">
+                                <input type="file" name="image" src="" alt="">
+                                بارگذاری تصویر جدید
+                            </label>
+                            <div class="profile-error image-error mb-2"></div>
                         </div>
-                        <!-- ! first-name and last-name section -->
-                        <!-- errors -->
-                        <div class="text-center d-flex justify-content-around align-items-center flex-column">
-                            <div class="profile-error first-name-error my-1"></div>
-                            <div class="profile-error last-name-error my-1"></div>
-                        </div>
-                        <!-- edit -->
-                        <div class="text-center w-100 mb-4 d-flex justify-content-around align-items-center flex-wrap">
-                            <div class="d-flex justify-content-center align-items-center flex-column col-xl-6 col-lg-8 col-md-10 col-sm-10 col-11 flex-wrap">
-                                <!-- <div class="profile-error email-error my-2"></div> -->
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <label class="pe-2">نام</label>
-                                    <input type="text" name="first-name"
-                                    class="py-1 text-center" disabled
-                                    style="position: relative; left: 10px;">
-                                    <i class="edit-icon bi bi-pen-fill ms-1"
-                                    style="position: relative; left: 10px;"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center flex-column col-xl-6 col-lg-8 col-md-10 col-sm-10 col-11 flex-wrap">
-                                <!-- <div class="profile-error phone-error my-2"></div> -->
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <label class="pe-2">نام خانوادگی</label>
-                                    <input type="text" name="phone"
-                                    class="py-1 text-center" disabled>
-                                    <i class="edit-icon bi bi-pen-fill ms-1"></i>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+
                 <div class="profile-orders">
                     <div class="profile-order-unit mx-5 my-3 d-flex text-center justify-content-center align-items-between flex-column"
                         style="font-size: 18px; font-weight: 600; color:rgb(46, 46, 46);">
@@ -213,7 +234,8 @@
                                 <span>7500000</span>
                             </div>
                         </div>
-                        <div class="profile-order-section  mx-auto mt-2 mb-3 d-flex justify-content-between align-items-center">
+                        <div
+                            class="profile-order-section  mx-auto mt-2 mb-3 d-flex justify-content-between align-items-center">
                             <div class="profile-order-row">
                                 2
                             </div>
