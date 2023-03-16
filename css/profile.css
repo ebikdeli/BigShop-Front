@@ -1,0 +1,86 @@
+.profile-content-box > section{
+    border-radius: 7px;
+}
+
+.active{
+    display: contents !important;
+}
+
+
+/* * profile-icon section (START) */
+.profile-icons-list{
+    font-size: 30px;
+}
+
+.profile-icons-list > i{
+    cursor: pointer;
+}
+
+@media screen and (width >= 992px ){
+    .profile-content-box{
+        min-height: 300px;
+    }
+}
+/* * profile-icon section (END) */
+
+
+/* * profile-edit section (START) */
+label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input{
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.edit-icon{
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profile-error{
+    color: red;
+
+}
+/* * profile-edit section (END) */
+
+
+/* * profile-order section */
+.profile-orders{
+    display: none;
+}
+
+.profile-order-id{
+    font-weight: 600;
+}
+
+
+@media only screen and (width > 700px){
+    .profile-order-section{
+        width: 80%;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .profile-order-row{
+        width: 15%;
+    }
+    .profile-order-id{
+        width: 30%;
+    }
+    .profile-order-quantity{
+        width: 15%;
+    }
+    .profile-order-price{
+        width: 20%;
+    }
+}
+
+@media only screen and (width <= 700px){
+    .profile-order-section{
+        width: 100%;
+        font-size: 16px;
+    }
+}
+/* * profile-order section */
