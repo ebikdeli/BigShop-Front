@@ -1,4 +1,5 @@
 import {sendPostData} from './ajax.js';
+import {validateEmail} from './functions.js';
 
 
 
@@ -113,36 +114,90 @@ changePasswordForm.addEventListener('submit', e => {
 
 // *** Edit profile ***
 let editProfilePanel = document.querySelector('.profile-edit');
-// let editProfileIcons = document.querySelectorAll('.edit-icon');
 let editSubmitButton = document.querySelector('#profile-edit-submit');
 let profileEditForm = document.querySelector('#profile-edit-form');
+const editProfileInputs = document.querySelectorAll('.edit-profile-form-input');
 
+// * enable-disable input box for each input by click on its pen icon
 editProfilePanel.addEventListener('click', e => {
     if(e.target.classList.contains('edit-icon')){
         const editIcon = e.target;
-        console.log(editIcon);
+        let editInput = null;
+        Array.from(editIcon.parentElement.children).forEach(elem => {
+            if(elem.tagName === 'INPUT'){
+                editInput = elem;
+            }
+        })
+        if(editInput){
+            if(editInput.disabled){
+                editInput.disabled = false;
+            }
+            else{
+                editInput.disabled = true;
+            }
+        }
     }
 })
 
-// Array.from(editProfileIcons).forEach(editIcon => {
-//     editIcon.addEventListener('click', e => {
-//         Array.from(e.target.parentElement.children).forEach(elem => {
-//             if(elem.tagName == 'INPUT' && elem.disabled && editSubmitButton.disabled){
-//                 elem.disabled = false;
-//                 editIcon.addEventListener('click', e => {
-//                     elem.disabled = true;
-//                     editSubmitButton.disabled = true;
-//                 })
-//                 elem.addEventListener('input', e => {
-//                     editSubmitButton.disabled = false;
-//                     profileEditForm.addEventListener('submit', e => {
-//                     e.preventDefault();
-//                     console.log(elem.value);
-//                     elem.disabled = true;
-//                     editSubmitButton.disabled = true;
-//                     })
-//                 })
-//             }
-//         })
-//     })
-// })
+// * If each input changes, submit button should be enabled
+let changedData = new Object();
+
+Array.from(editProfileInputs).forEach(editInput => {
+    let oldInputValue = editInput.value;
+    editInput.addEventListener('input', e => {
+        let newInputValue = editInput.value;
+        let fieldName = editInput.getAttribute('name');
+        if(oldInputValue !== newInputValue){
+            editSubmitButton.disabled = false;
+            changedData[fieldName] = newInputValue;
+        }
+        else{
+            delete changedData[fieldName];
+        }
+    })
+})
+
+// * Submit form and validate data
+let emailError = document.querySelector('.email-error');
+let phoneError = document.querySelector('.phone-error');
+let firstNameError = document.querySelector('.first-name-error');
+let lastNameError = document.querySelector('.last-name-error');
+let addressError = document.querySelector('.address-error')
+
+profileEditForm.addEventListener('submit', e => {
+    e.preventDefault();
+    emailError.innerText = '';
+    phoneError.innerText = '';
+    firstNameError.innerText = '';
+    lastNameError.innerText = '';
+    addressError.innerText = '';
+    let errors = 0;
+    // Validate data
+    Object.keys(changedData).forEach(key => {
+        if(key == 'email'){
+            if(changedData[key].length == 0){
+                emailError.innerText = 'ایمیل را وارد کنید';
+                errors += 1;
+            }
+            if(!validateEmail(changedData[key])){
+                emailError.innerText = 'ایمیل خود را به درستی وارد کنید';
+                errors += 1;
+            }
+        }
+        if(errors >= 1){
+            console.log('there are lot of errors');
+        }
+        // If there is no error in validation, send data to server
+        else{
+            let url = 'http://127.0.0.1:8000/edit-profile';
+            let errMsg = 'داده ها به خوبی ارسال نشد';
+            sendPostData(url, changedData, errMsg)
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
+    })
+})
