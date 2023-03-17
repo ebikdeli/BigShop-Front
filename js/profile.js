@@ -34,6 +34,7 @@ iconList.addEventListener('click', e => {
 
 // *** Change password from Profile Security section (panel) ***
 let changePasswordForm = document.querySelector('#profile-password-change-form');
+let changePasswordResult = document.querySelector('.profile-security-result');
 
 changePasswordForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -41,6 +42,7 @@ changePasswordForm.addEventListener('submit', e => {
     const currentPassword = formData.get('password-current');
     const newPassword = formData.get('password-new');
     const confirmPassword = formData.get('password-new-confirm');
+    changePasswordResult.innerText = '';
     
     // * Data validation of password form
     const passwordChangeDataValidation = () => {
@@ -104,6 +106,14 @@ changePasswordForm.addEventListener('submit', e => {
         sendPostData(url, data, error)
         .then(data => {
             console.log(data);
+            if(data.status == 200){
+                changePasswordResult.innerText = 'تغییر رمز با موفقیت انجام شد';
+                changePasswordResult.style.color = 'green';
+            }
+            else{
+                changePasswordResult.innerText = 'تغییر رمز انجام نشد';
+                changePasswordResult.style.color = 'red';
+            }
         })
         .catch(err => {
             console.log(err);
