@@ -41,9 +41,9 @@
 
   <!-- **** 'header' block in 'base.html/include header.html' **** -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: grey;">
-    <div class="container-fluid justify-content-between px-5">
+    <div class="container-fluid px-5 justify-content-between align-items-center flex-wrap">
       <!-- navbar links section -->
-      <div class="col-md-5" id="navbar-links">
+      <div class="col-md-5 col-sm-6 col-6" id="navbar-links">
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item px-2">
@@ -71,7 +71,7 @@
         </div>
       </div>
       <!-- navbar logo section -->
-      <div class="" id='navbar-logo'>
+      <div class="col-md-1 col-sm-6 col-6 text-center" id='navbar-logo'>
         <div>
           <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="BigShop" class="img-thumbnail"></a>
         </div>
@@ -81,18 +81,18 @@
         </button>
       </div>
       <!-- Search/login section -->
-      <div id="search-login" class="d-flex px-2 col-md-5 justify-content-end align-items-center">
-        <div id="search-form">
+      <div class="px-2 col-md-5 col-sm-10 col-10 d-flex justify-content-end align-items-center" id="search-login">
+        <div class="w-75" id="search-form">
           <!-- Search Form -->
-          <form class="d-flex" role="button">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex justify-content-end align-items-center" role="button">
+            <input class="form-control me-2 w-100" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
         <!-- login/signup (In navbar for future use) -->
-        
+
       </div>
-      
+
     </div>
   </nav>
   <!-- **** 'header' block in 'base.html/include header.html' **** -->
@@ -108,20 +108,20 @@
         <div class="login py-3">
           <a id="login-link" href="#">
             <div class="d-flex align-items-center justify-content-between">
-            <!-- if user login: green user icon, If user is not login or not registered: red icon -->
-            <i id="user-icon" class='fas fa-user-alt' style='font-size:30px;color:green'></i>
-            <i>login/register</i>
+              <!-- if user login: green user icon, If user is not login or not registered: red icon -->
+              <i id="user-icon" class='fas fa-user-alt' style='font-size:30px;color:green'></i>
+              <i>login/register</i>
             </div>
           </a>
         </div>
         <!-- cart -->
         <div class="cart py-3">
-        <a href="#" class="s-cart-link">
-          <i class="px-2 fa fa-shopping-cart" style="font-size:28px"></i>
-          <div class="s-cart-number">
-            <p class="p-0 m-auto text-white">3</p>
-          </div>
-        </a>
+          <a href="#" class="s-cart-link">
+            <i class="px-2 fa fa-shopping-cart" style="font-size:28px"></i>
+            <div class="s-cart-number">
+              <p class="p-0 m-auto text-white">3</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -129,261 +129,276 @@
     <h1 class="text-center" style="direction: rtl; font-family:IRANYekan, sans-serif;">به فروشگاه BigShop خوش آمدید</h1>
     <!-- ***** 'cover' section ***** -->
     <div class="">
-    <div class="d-flex background background1">
-      <h2 class="bg-text">Great IT products</h2>
-    </div>
-    <div class="d-flex background background2">
-      <h2 class="bg-text">Best products in the world</h2>
-    </div>
-    <div class="d-flex background background3">
-      <h2 class="bg-text">Anything you want</h2>
-    </div>
-  </div>
-
-  <!-- ******* products list section ********** -->
-  <h2 class="mt-3" id="newest-products">جدیدترین محصولات</h2>
-  <div class="row align-items-center justify-content-center products-list my-1">
-    <!-- If we don't want to use bootstrap flex system, would use below 'div' -->
-    <!-- <div class="products-list my-4"> -->
-    <!-- Each product has this block -->
-    <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
-      <div class="product-image-block py-2 mx-auto">
-        <a href="./product_detail.html">
-          <img src="./images/laptop_PNG101812.png" class="product-image" alt="">
-        </a>
+      <div class="d-flex background background1">
+        <h2 class="bg-text">Great IT products</h2>
       </div>
-      <div class="product-name text-center py-3">
-        <a href="./product_detail.html" style="text-decoration: none;">
-          <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">لپ تاپ جدید</p>
-        </a>
+      <div class="d-flex background background2">
+        <h2 class="bg-text">Best products in the world</h2>
       </div>
-      <div class="product-brand pb-3">
-        <h5><span style="font-weight: 700;">Hewlett packard (HP)</span></h5>
-      </div>
-      <div class="product-price">
-        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
-        <div class="price-original">
-          <p class="discounted mb-0 px-3"><span class="price-value">200000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <div class="price-discounted">
-          <p class="px-3"><span class="price-value">190000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <!-- Following block will appear only after user add the product to the cart -->
-        <div class="text-primary d-none" style="font-family: IRANYekan, sans-serif;">
-          <small>به سبد خرید اضافه شد</small>
-        </div>
-        <button class="add-to-cart btn btn-success mb-2">
-          <span class="px-1">+ سبد خرید</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Every tag for the product listed here (clickable) -->
-      <div class="product-tags">
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>laptop</p>
-          </a>
-        </div>
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>لپ تاپ</p>
-          </a>
-        </div>
+      <div class="d-flex background background3">
+        <h2 class="bg-text">Anything you want</h2>
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
-      <div class="product-image-block py-2 mx-auto">
-        <a href="./product_detail.html">
-          <img src="./images/server_PNG35.png" class="product-image" alt="">
-        </a>
-      </div>
-      <div class="product-name text-center py-3">
-        <a href="./product_detail.html" style="text-decoration: none;">
-          <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Server</p>
-        </a>
-      </div>
-      <div class="product-brand pb-3">
-        <h5><span style="font-weight: 700;">Fujitsu</span></h5>
-      </div>
-      <div class="product-price">
-        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
-        <div class="price-original">
-          <p class="discounted mb-0 px-3"><span class="price-value">3500000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <div class="price-discounted">
-          <p class="px-3"><span class="price-value">320000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <!-- Following block will appear only after user add the product to the cart -->
-        <div class="text-primary d-none" style="font-family: IRANYekan, sans-serif;">
-          <small>به سبد خرید اضافه شد</small>
-        </div>
-        <button class="add-to-cart btn btn-success mb-2">
-          <span class="px-1">+ سبد خرید</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Every tag for the product listed here (clickable) -->
-      <div class="product-tags">
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>زیرساخت</p>
+    <!-- ******* products list section ********** -->
+    <h2 class="mt-3" id="newest-products">جدیدترین محصولات</h2>
+    <div class="row align-items-center justify-content-center products-list my-1">
+      <!-- If we don't want to use bootstrap flex system, would use below 'div' -->
+      <!-- <div class="products-list my-4"> -->
+      <!-- Each product has this block -->
+      <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
+        <div class="product-image-block py-2 mx-auto">
+          <a href="./product_detail.html">
+            <img src="./images/laptop_PNG101812.png" class="product-image" alt="">
           </a>
         </div>
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>laptop</p>
+        <div class="product-name text-center py-3">
+          <a href="./product_detail.html" style="text-decoration: none;">
+            <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">لپ تاپ جدید</p>
           </a>
         </div>
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>electronic</p>
-          </a>
+        <div class="product-brand pb-3">
+          <h5><span style="font-weight: 700;">Hewlett packard (HP)</span></h5>
+        </div>
+        <div class="product-price">
+          <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+          <div class="price-original">
+            <p class="discounted mb-0 px-3"><span class="price-value">200000</span><span
+                class="price-currency px-1">تومان</span></p>
+          </div>
+          <div class="price-discounted">
+            <p class="px-3"><span class="price-value">190000</span><span class="price-currency px-1">تومان</span></p>
+          </div>
+          <!-- Following block will appear only after user add the product to the cart -->
+          <div success="ok" class="text-primary d-none my-1" style="font-family: IRANYekan, sans-serif; color: green;">
+            <small>به سبد خرید اضافه شد</small>
+          </div>
+          <button class="add-to-cart btn btn-success mb-2" data-product-id="11">
+            <span class="px-1">+ سبد خرید</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+        <!-- Every tag for the product listed here (clickable) -->
+        <div class="product-tags">
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>laptop</p>
+            </a>
+          </div>
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>لپ تاپ</p>
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
+        <div class="product-image-block py-2 mx-auto">
+          <a href="./product_detail.html">
+            <img src="./images/server_PNG35.png" class="product-image" alt="">
+          </a>
+        </div>
+        <div class="product-name text-center py-3">
+          <a href="./product_detail.html" style="text-decoration: none;">
+            <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Server</p>
+          </a>
+        </div>
+        <div class="product-brand pb-3">
+          <h5><span style="font-weight: 700;">Fujitsu</span></h5>
+        </div>
+        <div class="product-price">
+          <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+          <div class="price-original">
+            <p class="discounted mb-0 px-3"><span class="price-value">3500000</span><span
+                class="price-currency px-1">تومان</span></p>
+          </div>
+          <div class="price-discounted">
+            <p class="px-3"><span class="price-value">320000</span><span class="price-currency px-1">تومان</span></p>
+          </div>
+          <!-- Following block will appear only after user add the product to the cart -->
+          <div success="ok" class="text-primary d-none my-1" style="font-family: IRANYekan, sans-serif; color: green;">
+            <small>به سبد خرید اضافه شد</small>
+          </div>
+          <button class="add-to-cart btn btn-success mb-2" data-product-id="22">
+            <span class="px-1">+ سبد خرید</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+        <!-- Every tag for the product listed here (clickable) -->
+        <div class="product-tags">
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>زیرساخت</p>
+            </a>
+          </div>
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>laptop</p>
+            </a>
+          </div>
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>electronic</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
+        <div class="product-image-block py-2 mx-auto">
+          <a href="#">
+            <img src="./images/microwave_PNG101664.png" class="product-image" alt="">
+          </a>
+        </div>
+        <div class="product-name text-center py-3">
+          <a href="#" style="text-decoration: none;">
+            <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">سرور lp جدید</p>
+          </a>
+        </div>
+        <div class="product-brand pb-3">
+          <h5><span style="font-weight: 700;">Lenovo</span></h5>
+        </div>
+        <div class="product-price">
+          <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+          <div class="price-original">
+            <p class="discounted mb-0 px-3"><span class="price-value">400000</span><span
+                class="price-currency px-1">تومان</span></p>
+          </div>
+          <div class="price-discounted">
+            <p class="px-3"><span class="price-value">390000</span><span class="price-currency px-1">تومان</span></p>
+          </div>
+          <!-- Following block will appear only after user add the product to the cart -->
+          <div success="ok" class="text-primary d-none my-1" style="font-family: IRANYekan, sans-serif; color: green;">
+            <small>به سبد خرید اضافه شد</small>
+          </div>
+          <button class="add-to-cart btn btn-success mb-2" data-product-id="33">
+            <span class="px-1">+ سبد خرید</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+        <!-- Every tag for the product listed here (clickable) -->
+        <div class="product-tags">
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>سرور</p>
+            </a>
+          </div>
+          <div class="single-tag">
+            <a href="#">
+              <p>server</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
+        <div class="product-image-block py-2 mx-auto">
+          <a href="#">
+            <img src="./images/iphone_11_PNG15.png" class="product-image" alt="">
+          </a>
+        </div>
+        <div class="product-name text-center py-3">
+          <a href="#" style="text-decoration: none;">
+            <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Iphone 11 pro max premium</p>
+          </a>
+        </div>
+        <div class="product-brand pb-3">
+          <h5><span style="font-weight: 700;">Apple</span></h5>
+        </div>
+        <div class="product-price">
+          <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+          <div class="price-original">
+            <p class="discounted mb-0 px-3"><span class="price-value">500000</span><span
+                class="price-currency px-1">تومان</span></p>
+          </div>
+          <div class="price-discounted">
+            <p class="px-3"><span class="price-value">490000</span><span class="price-currency px-1">تومان</span></p>
+          </div>
+          <!-- Following block will appear only after user add the product to the cart -->
+          <div success="ok" class="text-primary d-none my-1" style="font-family: IRANYekan, sans-serif; color: green;">
+            <small>به سبد خرید اضافه شد</small>
+          </div>
+          <button class="add-to-cart btn btn-success mb-2" data-product-id="44">
+            <span class="px-1">+ سبد خرید</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+        <!-- Every tag for the product listed here (clickable) -->
+        <div class="product-tags">
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>موبایل</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
+        <div class="product-image-block py-2 mx-auto">
+          <a href="#">
+            <img src="./images/laptop_PNG101820.png" class="product-image" alt="">
+          </a>
+        </div>
+        <div class="product-name text-center py-3">
+          <a href="#" style="text-decoration: none;">
+            <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Asus HiLab 6032-nz</p>
+          </a>
+        </div>
+        <div class="product-brand pb-3">
+          <h5><span style="font-weight: 700;">Asus</span></h5>
+        </div>
+        <div class="product-price">
+          <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
+          <div class="price-original">
+            <p class="discounted mb-0 px-3"><span class="price-value">240000</span><span
+                class="price-currency px-1">تومان</span></p>
+          </div>
+          <div class="price-discounted">
+            <p class="px-3"><span class="price-value">235000</span><span class="price-currency px-1">تومان</span></p>
+          </div>
+          <!-- Following block will appear only after user add the product to the cart -->
+          <div success="ok" class="text-primary d-none my-1" style="font-family: IRANYekan, sans-serif; color: green;">
+            <small>به سبد خرید اضافه شد</small>
+          </div>
+          <button class="add-to-cart btn btn-success mb-2" data-product-id="55">
+            <span class="px-1">+ سبد خرید</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </button>
+        </div>
+        <!-- Every tag for the product listed here (clickable) -->
+        <div class="product-tags">
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>لپ تاپ</p>
+            </a>
+          </div>
+          <div class="single-tag m-2">
+            <a href="#">
+              <p>laptop</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-4 col-sm-12 col-12 mx-2 product">Asshole</div> -->
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
-      <div class="product-image-block py-2 mx-auto">
-        <a href="#">
-          <img src="./images/microwave_PNG101664.png" class="product-image" alt="">
-        </a>
-      </div>
-      <div class="product-name text-center py-3">
-        <a href="#" style="text-decoration: none;">
-          <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">سرور lp جدید</p>
-        </a>
-      </div>
-      <div class="product-brand pb-3">
-        <h5><span style="font-weight: 700;">Lenovo</span></h5>
-      </div>
-      <div class="product-price">
-        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
-        <div class="price-original">
-          <p class="discounted mb-0 px-3"><span class="price-value">400000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <div class="price-discounted">
-          <p class="px-3"><span class="price-value">390000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <!-- Following block will appear only after user add the product to the cart -->
-        <div class="text-primary d-none" style="font-family: IRANYekan, sans-serif;">
-          <small>به سبد خرید اضافه شد</small>
-        </div>
-        <button class="add-to-cart btn btn-success mb-2">
-          <span class="px-1">+ سبد خرید</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Every tag for the product listed here (clickable) -->
-      <div class="product-tags">
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>سرور</p>
-          </a>
-        </div>
-        <div class="single-tag">
-          <a href="#">
-            <p>server</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
-      <div class="product-image-block py-2 mx-auto">
-        <a href="#">
-          <img src="./images/iphone_11_PNG15.png" class="product-image" alt="">
-        </a>
-      </div>
-      <div class="product-name text-center py-3">
-        <a href="#" style="text-decoration: none;">
-          <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Iphone 11 pro max premium</p>
-        </a>
-      </div>
-      <div class="product-brand pb-3">
-        <h5><span style="font-weight: 700;">Apple</span></h5>
-      </div>
-      <div class="product-price">
-        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
-        <div class="price-original">
-          <p class="discounted mb-0 px-3"><span class="price-value">500000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <div class="price-discounted">
-          <p class="px-3"><span class="price-value">490000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <!-- Following block will appear only after user add the product to the cart -->
-        <div class="text-primary d-none" style="font-family: IRANYekan, sans-serif;">
-          <small>به سبد خرید اضافه شد</small>
-        </div>
-        <button class="add-to-cart btn btn-success mb-2">
-          <span class="px-1">+ سبد خرید</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Every tag for the product listed here (clickable) -->
-      <div class="product-tags">
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>موبایل</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-12 mx-1 my-2 product">
-      <div class="product-image-block py-2 mx-auto">
-        <a href="#">
-          <img src="./images/laptop_PNG101820.png" class="product-image" alt="">
-        </a>
-      </div>
-      <div class="product-name text-center py-3">
-        <a href="#" style="text-decoration: none;">
-          <p class="m-0" style="font-family:IRANYekan, sans-serif; font-weight: 600;">Asus HiLab 6032-nz</p>
-        </a>
-      </div>
-      <div class="product-brand pb-3">
-        <h5><span style="font-weight: 700;">Asus</span></h5>
-      </div>
-      <div class="product-price">
-        <!-- If product has discount, activate 'discounted' css class for the 'p' element -->
-        <div class="price-original">
-          <p class="discounted mb-0 px-3"><span class="price-value">240000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <div class="price-discounted">
-          <p class="px-3"><span class="price-value">235000</span><span class="price-currency px-1">تومان</span></p>
-        </div>
-        <!-- Following block will appear only after user add the product to the cart -->
-        <div class="text-primary d-none" style="font-family: IRANYekan, sans-serif;">
-          <small>به سبد خرید اضافه شد</small>
-        </div>
-        <button class="add-to-cart btn btn-success mb-2">
-          <span class="px-1">+ سبد خرید</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-      <!-- Every tag for the product listed here (clickable) -->
-      <div class="product-tags">
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>لپ تاپ</p>
-          </a>
-        </div>
-        <div class="single-tag m-2">
-          <a href="#">
-            <p>laptop</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="col-md-4 col-sm-12 col-12 mx-2 product">Asshole</div> -->
-  </div>
   </main>
   <!-- ******* 'content' block in 'base.html' ******* -->
 
@@ -411,7 +426,8 @@
               <p></p>
             </div>
             <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
-            <textarea name="content" class="form-control" id="content-input" rows="5" placeholder="انتقادات و پیشنهادات"></textarea>
+            <textarea name="content" class="form-control" id="content-input" rows="5"
+              placeholder="انتقادات و پیشنهادات"></textarea>
           </div>
           <button id="send-button" class="btn btn-primary">ارسال</button>
           <div class="pr-result">
@@ -420,7 +436,7 @@
             <p id="pr-failed"></p>
           </div>
         </form>
-        
+
       </div>
     </div>
     <div id="footer-content" class="pt-3">

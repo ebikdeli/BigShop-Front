@@ -1,12 +1,45 @@
 // * When import a module, we should import the script with '.js' extension. JS module rules are weird!
 import getCookie from './csrftoken.js';
 import { validateEmail } from './functions.js';
+import {sendPostData} from './ajax.js';
+
+
+
+// *** Add to cart button
+const addCartButtons = document.querySelectorAll('.add-to-cart');
+Array.from(addCartButtons).forEach(cartButton => {
+    cartButton.addEventListener('click', e => {
+        e.preventDefault();
+        let url = 'http://127.0.0.1:8000/add-product-cart';
+        let data = {product_id: cartButton.getAttribute('data-product-id'), product_number: 1};
+        let err = 'ارتباط با سرور مشکل دارد';
+        sendPostData(url, data, err)
+        .then(data => {
+            console.log(data);
+            if(data.status == 200){
+                Array.from(cartButton.parentElement.children).forEach(elem => {
+                    if(elem.hasAttribute('success')){
+                        elem.classList.remove('d-none');
+                        setTimeout(() => {
+                            elem.classList.add('d-none');
+                        }, 3000);
+                    }
+                })
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    })
+})
+
 
 
 // *** Send 'pr-form' data to server using Ajax ***
 // * NOTE: When validating forms using javascript, it is better to to let JS do all the validation like check if the input is email, required and etc
 let prForm = document.forms['pr-form'];
 // let prForm = document.querySelector('[name="pr-form"]')
+
 
 
 // ** Send data to server **
@@ -35,6 +68,7 @@ let sendPrData = async (url=new String, form=new FormData ,errorMsg=new String) 
         }
     }
 }
+
 
 
 // * This Eventlistener used for submitting the PrForm and validate user data in front-end
