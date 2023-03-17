@@ -121,6 +121,11 @@
                 <div class="profile-edit d-none active" data-icon-content="profile-edit">
                     <form action="" method="post" id="profile-edit-form">
                         <div class="d-flex justify-content-center align-items-center flex-wrap">
+                            <!-- ! SHOW SUCCESS OR ERROR MESAGE AFTER EDITING PROFILE -->
+                            <div
+                                class="col-lg-10 col-md-10 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column edit-profile-result mt-3 mb-1"
+                                style="font-size: 18px;">
+                            </div>
                             <!-- ! profile-email -->
                             <div
                                 class="col-lg-5 col-md-7 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column">
@@ -186,19 +191,27 @@
                                 </label>
                                 <div class="mb-3 d-flex justify justify-content-center align-items-center">
                                     <div style="width: 150px; height: 150px;">
-                                        <img src="./images/generic-profile-image.svg" alt=""
+                                        <img src="./images/generic-profile-image.svg" id="profile-edit-current-image" alt=""
                                             style="width: 100%; height: 100%; border: 1px; border-color: rgb(214, 27, 27); border-radius: 50%">
                                     </div>
                                 </div>
                                 <!-- When new image uploaded, a thumbnail of new image shown here -->
                                 <div id="new-image-thumbnail"
-                                    class="my-1 d-flex justify justify-content-center align-items-center">
+                                    class="my-1 d-flex justify-content-center align-items-center">
 
                                 </div>
-                                <label id="custom-input-image-button">
-                                    <input type="file" name="image" src="" alt="" class="edit-profile-form-input">
-                                    بارگذاری تصویر جدید
-                                </label>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <label id="custom-input-image-button" class="me-1">
+                                        <input type="file" name="image" src="" alt="" id="upload-profile-image">
+                                        بارگذاری تصویر جدید
+                                    </label>
+                                    <button id="verify-new-image" class="d-none btn btn-info ms-1" style="font-size: 18px;">
+                                        ذخیره
+                                    </button>
+                                </div>
+                                <div class="profile-edit-uploaded-image mt-3">
+
+                                </div>
                                 <div class="profile-error image-error mb-2"></div>
                             </div>
                         </div>

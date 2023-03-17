@@ -1,5 +1,6 @@
 import {sendPostData} from './ajax.js';
 import {validateEmail} from './functions.js';
+import getCookie from './csrftoken.js';
 
 
 
@@ -118,7 +119,7 @@ let editSubmitButton = document.querySelector('#profile-edit-submit');
 let profileEditForm = document.querySelector('#profile-edit-form');
 const editProfileInputs = document.querySelectorAll('.edit-profile-form-input');
 
-// * enable-disable input box for each input by click on its pen icon
+// * enable-disable input box for each input by click on its pen icon (except for profile image)
 editProfilePanel.addEventListener('click', e => {
     if(e.target.classList.contains('edit-icon')){
         const editIcon = e.target;
@@ -163,6 +164,7 @@ let phoneError = document.querySelector('.phone-error');
 let firstNameError = document.querySelector('.first-name-error');
 let lastNameError = document.querySelector('.last-name-error');
 let addressError = document.querySelector('.address-error')
+const editProfileResult = document.querySelector('.edit-profile-result');
 
 profileEditForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -171,6 +173,7 @@ profileEditForm.addEventListener('submit', e => {
     firstNameError.innerText = '';
     lastNameError.innerText = '';
     addressError.innerText = '';
+    editProfileResult.innerText = '';
     let errors = 0;
     // Validate data
     Object.keys(changedData).forEach(key => {
@@ -184,20 +187,84 @@ profileEditForm.addEventListener('submit', e => {
                 errors += 1;
             }
         }
-        if(errors >= 1){
-            console.log('there are lot of errors');
+    }) 
+    if(errors >= 1){
+        console.log('there are lot of errors');
+    }
+    // If there is no error in validation, send data to server
+    else{
+        let url = 'http://127.0.0.1:8000/edit-profile';
+        let errMsg = 'داده ها به خوبی ارسال نشد';
+        sendPostData(url, changedData, errMsg)
+        .then(data => {
+            console.log(data);
+            if(data.status == 200){
+                editProfileResult.style.color = 'green';
+                editProfileResult.innerText = 'پروفایل با موفقیت آپدیت شد';
+            }
+            else{
+                editProfileResult.style.color = 'red';
+                editProfileResult.innerText = 'پروفایل آپدیت نشد';
+            }
+            editSubmitButton.disabled = true;
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+})
+
+// * Upload-change user image
+let profileImageInput = document.querySelector('#upload-profile-image');
+const profileImageVerifyButton = document.querySelector('#verify-new-image');
+let profileCurrentImage = document.querySelector('#profile-edit-current-image');
+let profileNewImage = document.querySelector('.profile-edit-uploaded-image');
+var image = null;
+
+// Upload and show image to user before submit the image
+profileImageInput.addEventListener('change', e => {
+    image = document.createElement('img');
+    image.src = profileImageInput.files[0].name;
+    image.width = '150';
+    image.height = '150';
+    // image.style.borderRadius = '50%';
+    profileNewImage.appendChild(image);
+    profileImageVerifyButton.classList.remove('d-none');
+})
+
+// Submit the image verify button
+profileImageVerifyButton.addEventListener('click', e => {
+    e.preventDefault();
+    let url = 'http://127.0.0.1:8000/edit-profile-image'
+    // Because the data is a file (not jsonizable) we cannot use 'sendPostData'
+    let data = new FormData();
+    data.append('image', profileImageInput.files[0]);
+    const csrftoken = getCookie('csrftoken');
+    fetch(url, {
+        method: 'POST',
+        body: data,
+        credentials: 'include',
+        mode: 'cors',
+        headers: {
+            'X-CSRFToken': csrftoken,
         }
-        // If there is no error in validation, send data to server
-        else{
-            let url = 'http://127.0.0.1:8000/edit-profile';
-            let errMsg = 'داده ها به خوبی ارسال نشد';
-            sendPostData(url, changedData, errMsg)
-            .then(data => {
-                console.log(data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+    })
+    .then(response => {
+        if(response.status != 200 || !response.ok){
+            return Promise.reject('مشکلی پیش آمده');
         }
+        return response.json();
+    })
+    .then(data => {
+        // If server responds with success, replace current image with new image
+        console.log(data);
+        if(data.status == 200){
+            profileCurrentImage.src = profileImageInput.files[0].name;
+            image.remove();
+            profileImageVerifyButton.classList.add('d-none');
+        }
+    })
+    .catch(err => {
+        console.log(err);
     })
 })
