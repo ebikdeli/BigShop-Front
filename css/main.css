@@ -34,7 +34,7 @@ body{
 }
 
 
-/* Make cart sticky to the screen */
+/* * Make cart sticky to the screen (START) */
 .login-cart-box{
     position: sticky;
     top: 5px;
@@ -42,7 +42,7 @@ body{
 
 .login-cart{
     position: absolute;
-    right: 0;
+    right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +68,21 @@ body{
     height: 30px;
     border-radius: 50%
 }
-/* Make cart sticky to the screen */
+
+@media only screen and (width <=750px){
+    .login-cart{
+        position: fixed;
+        left: 50%;
+        bottom: 20%;
+        width: min-content;
+        transform: translate(-50%, 0);
+        background-color: rgb(224, 221, 221);
+        border-radius: 8%;
+        padding: 5px 15px;
+        opacity: 80%;
+    }
+}
+/* * Make cart sticky to the screen (END) */
 
 
 /* Cover section */

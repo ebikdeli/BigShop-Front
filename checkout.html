@@ -116,10 +116,15 @@
         <div id="order--exist">
             <h1 class="display-4 pb-4 text-center">سفارش</h1>
             <div class="order-body d-flex justify-content-center align-items-center flex-column-reverse">
-
+                <a href="./failed_payment.html" style="text-decoration: none;">
+                    <button class="p-1 btn btn-danger d-flex justify-content-center align-items-center">
+                        <i class="bi bi-x" style="font-size:26px;"></i>
+                        <p class="m-0">پرداخت ناموفق</p>
+                    </button>
+                </a>
                 <div class="order-payment-block">
                     <div class="order-payment my-4">
-                        <div class="py-3 px-2 d-flex justify-content-start align-items-end flex-column"">
+                        <div class="py-3 px-2 d-flex justify-content-start align-items-end flex-column">
                             <!-- * Server will put the data in the <span> tag -->
                             <div class="py-2 order-payment-row d-flex justify-content-center align-items-center flex-row-reverse flex-wrap">
                                 <p class="my-0 px-1">:تعداد</p>
@@ -144,7 +149,7 @@
                             </div>
                         </div>
                         <div id="payment--button--separator" class="pb-1">
-                            <a href="./order.html">
+                            <a href="./success_pay.html">
                                 <button class="btn btn-success mx-auto mt-1 mb-3 d-flex justify-content-around align-items-center" id="order--payment--button" style="font-size: 22px; direction: rtl;">
                                     <p class="my-0 px-2">پرداخت</p>
                                     <i class="bi bi-credit-card-2-back d-block px-2"></i>
