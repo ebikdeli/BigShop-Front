@@ -27,6 +27,12 @@ input[name='email'], input[name='password']{
     border-color: rgb(131, 133, 132);
 }
 
+input:focus{
+    background-color: rgb(211, 215, 215);
+    color: black;
+    font-size: 18px;
+}
+
 button[type='submit']{
     /* color: beige; */
     /* background-color: rgb(13, 177, 7); */
