@@ -41,9 +41,9 @@
 
   <!-- **** 'header' block in 'base.html/include header.html' **** -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: grey;">
-    <div class="container-fluid px-5 justify-content-between align-items-center flex-wrap">
+    <div class="container-fluid mx-auto px-5 justify-content-between align-items-center flex-wrap">
       <!-- navbar links section -->
-      <div class="col-md-5 col-sm-6 col-6" id="navbar-links">
+      <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-6" id="navbar-links">
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item px-2">
@@ -71,7 +71,7 @@
         </div>
       </div>
       <!-- navbar logo section -->
-      <div class="col-md-1 col-sm-6 col-6 text-center" id='navbar-logo'>
+      <div class="col-md-1 col-sm-6 col-6 text-center mx-auto" id='navbar-logo'>
         <div>
           <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="BigShop" class="img-thumbnail"></a>
         </div>
@@ -81,11 +81,11 @@
         </button>
       </div>
       <!-- Search/login section -->
-      <div class="px-2 col-md-5 col-sm-10 col-10 d-flex justify-content-end align-items-center" id="search-login">
-        <div class="w-75" id="search-form">
+      <div class="px-2 col-xl-4 col-lg-5 col-md-8 col-sm-12 col-12 d-flex justify-content-end align-items-center" id="search-login">
+        <div class="w-100" id="search-form-box">
           <!-- Search Form -->
-          <form class="d-flex justify-content-end align-items-center" role="button">
-            <input class="form-control me-2 w-100" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex justify-content-end align-items-center flex-md-row flex-sm-column flex-column" role="button">
+            <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>

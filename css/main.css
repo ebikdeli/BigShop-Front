@@ -5,12 +5,24 @@ body{
 }
 
 
-/* Navbar section */
+/* * Navbar section (START) */
+@media only screen and (width <= 991px){
+    #search-login{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #search-form-box{
+        margin-top: 10px;
+    }
+    #search-form-box > form > button{
+        margin-bottom: 10px;
+    }
+    #search-form-box > form > input{
+        margin-bottom: 10px;
+    }
+}
 
-/* #search-login{
-    padding-right: 10px;
-} */
-
+/* * Navbar section (END) */
 
 #login-link{
     text-decoration: none;
