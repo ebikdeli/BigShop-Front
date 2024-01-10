@@ -98,37 +98,26 @@ body{
     color: red
 }
 
-.background1{
-    background-image: url('../images/iphone_11_PNG15.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
+#main-image-carousel{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    width: 100%;
+    /* background-color: rgb(35, 34, 34); */
 }
 
-.background2{
-    background-image: url('../images/laptop_PNG101812.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
+#main-image-carousel div{
+    height: max-content;
+    width: auto !important;
 }
 
-.background3{
-    background-image: url('../images/server_PNG35.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-attachment: fixed;
+#carousel-div img{
+    height: max-content;
+    width: auto !important;
 }
 
 
-main{
-    width: 90%;
-}
 
 
 /* product-list section - THIS IS VERY NICE IF DON"T WANT TO USE BOOTSTRAP FLEX SYSTEM */
