@@ -98,14 +98,14 @@ body{
     color: red
 }
 
-#main-image-carousel{
+/* #main-image-carousel{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: 600px;
     width: 100%;
-    /* background-color: rgb(35, 34, 34); */
-}
+    background-color: rgb(35, 34, 34);
+} */
 
 #main-image-carousel div{
     height: max-content;
