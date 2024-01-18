@@ -6,6 +6,10 @@
     url("./fonts/BYekan.woff2") format('woff2');
 }
 
+:root{
+    --border-color: #d5d4d4;
+}
+
 *{
     font-family: 'B Yekan';
     direction: rtl;
@@ -21,8 +25,13 @@ body{
 
 /* * Navbar section (START) */
 nav{
-    top: 0;
-    position: sticky;
+    top: 0 !important;
+    position: sticky !important;
+    opacity: 0.9;
+}
+
+nav > div{
+    justify-content: start !important;
 }
 
 .navbar-nav{
@@ -39,6 +48,59 @@ nav{
 .dropdown-item{
     text-align: right !important;
 }
+
+@media screen and (max-width: 991px) {
+    nav > div{
+        justify-content: space-between !important;
+    }
+}
+
+.nav-si{
+    padding-left: 30px;
+    gap: 10px;
+}
+
+.nav-si input{
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: var(--border-color);
+    padding-left: 30px;
+    padding-right: 10px;
+    /* width: 70%; */
+}
+
+.bi-search{
+    position: relative;
+    left: 30px;
+    top: 2px;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 200;
+}
+
+.nav-icon{
+    gap: 5px;
+    color: #5E5E5A;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-icon:hover{
+    color: #323232;
+}
+
+.nav-icon small{
+    font-size: 16px;
+}
+
+.nav-icon i{
+    font-size: 20px;
+}
+
+.nav-cart-number{
+    font-size: 20px;
+}
 /* * Navbar section (END) */
 
 
@@ -51,57 +113,6 @@ nav{
 #user-icon{
     padding-right: 10px;
 }
-
-
-/* * Make cart sticky to the screen (START) */
-.login-cart-box{
-    position: sticky;
-    top: 5px;
-}
-
-.login-cart{
-    position: absolute;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(224, 221, 221);
-    border-radius: 8%;
-    padding: 5px 15px;
-    opacity: 80%;
-}
-
-.s-cart-link{
-    color: black;
-    text-decoration: none;
-    display: flex;
-}
-
-.s-cart-number{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%
-}
-
-@media only screen and (width <=750px){
-    .login-cart{
-        position: fixed;
-        left: 50%;
-        bottom: 20%;
-        width: min-content;
-        transform: translate(-50%, 0);
-        background-color: rgb(224, 221, 221);
-        border-radius: 8%;
-        padding: 5px 15px;
-        opacity: 80%;
-    }
-}
-/* * Make cart sticky to the screen (END) */
 
 
 /* Cover section */

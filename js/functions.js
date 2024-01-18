@@ -8,6 +8,19 @@ const validateEmail = (email) => {
   };
 
 
+
+// *** Convert number to a Comma separator string
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+// *** Convert back a comma separator string to Number
+function parseToNumber(str) {
+    return parseFloat(str.replaceAll(',', ''));
+}
+
+
 // Helper to add 1 to the product--cart input number
 let addOne = (inputNode, max=5) => {
     if(Number(inputNode.value < max)){
@@ -143,6 +156,7 @@ const signInDataValidation = (email, password) => {
 }
 
 
-export {validateEmail, addOne, minuseOne, 
+export {validateEmail, numberWithCommas, parseToNumber,
+    addOne, minuseOne, 
     checkCartQuantity, checkRulesBorder, disabledSubmitRule,
     signUpDataValidation, signInDataValidation};

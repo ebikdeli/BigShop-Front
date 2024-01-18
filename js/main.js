@@ -1,7 +1,21 @@
 // * When import a module, we should import the script with '.js' extension. JS module rules are weird!
 import getCookie from './csrftoken.js';
-import { validateEmail } from './functions.js';
+import { validateEmail, numberWithCommas, parseToNumber } from './functions.js';
 import {sendPostData} from './ajax.js';
+
+
+
+
+
+
+
+// Convert all price to comma separated values
+let convertPrice = () => {
+    Array.from(document.querySelectorAll('.price-value')).forEach(priceElem => {
+        priceElem.innerHTML = numberWithCommas(priceElem.innerHTML);
+    })
+}
+convertPrice();
 
 
 
