@@ -8,11 +8,12 @@
 
 :root{
     --border-color: #d5d4d4;
+    --text-color: #5E5E5A;
 }
 
 *{
     font-family: 'B Yekan';
-    direction: rtl;
+    /* direction: rtl; */
 }
 
 
@@ -25,9 +26,11 @@ body{
 
 /* * Navbar section (START) */
 nav{
+    direction: rtl;
     top: 0 !important;
     position: sticky !important;
     opacity: 0.9;
+    z-index: 10;
 }
 
 nav > div{
@@ -99,12 +102,11 @@ nav > div{
     cursor: pointer;
     padding-left: 5px;
     padding-right: 5px;
-    z-index: 200;
 }
 
 .nav-icon{
     gap: 5px;
-    color: #5E5E5A;
+    color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
     transition-duration: 0.5s;
@@ -129,58 +131,84 @@ nav > div{
 
 
 
-#login-link{
-    text-decoration: none;
-    color: black;
-}
 
-#user-icon{
-    padding-right: 10px;
-}
+/* * Main section (START) */
 
-
-/* Cover section */
-.background{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.bg-text{
-    font-size: 48px !important;
-    font-weight: 900 !important;
-    color: red
-}
-
-/* #main-image-carousel{
+/* Carousel section (START) */
+#main-image-carousel{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: 600px;
-    width: 100%;
-    background-color: rgb(35, 34, 34);
-} */
+    width: auto;
+    background-color: rgb(255, 255, 255);
+}
 
-#main-image-carousel div{
-    height: max-content;
+#main-image-carousel > div{
+    height: 100%;
+}
+
+/* override carousel button shape */
+.carousel-indicators button{
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 50% !important;
+    color: grey !important;
+}
+
+.carousel-inner{
+    height: 100%;
+}
+
+.carousel-item{
+    height: 100%;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    position: absolute; /* By default these two classes are positioned absolutely in bootstrap */
+    width: 40px;
+    height: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    background-color: var(--border-color);
+}
+
+@media screen and (max-width: 800px) {
+    #main-image-carousel{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 400px;
+        width: auto;
+        background-color: rgb(255, 255, 255);
+    }
+    .carousel-control-prev, .carousel-control-next{
+        width: 40px;
+        height: 70px;
+    }
+}
+
+.carousel-item img{
+    margin: 0 auto 0 auto;
+    height: 130%;
     width: auto !important;
 }
 
-#carousel-div img{
-    height: max-content;
-    width: auto !important;
+.carousel-caption{
+    direction: rtl;
+    font: 18px;
 }
 
+/* Carousel section (END) */
 
 
 
-/* product-list section - THIS IS VERY NICE IF DON"T WANT TO USE BOOTSTRAP FLEX SYSTEM */
-/* .products-list{
-    display: flex;
-    flex-flow: row wrap;  This line is very important to let flex set the next item to the nex line after current line gets full
-    align-items: center;
-    justify-content: flex-start;
-} */
+/* Product list section */
+
+.product-list-section{
+    direction: rtl;
+}
 
 #newest-products{
     font-weight: 600;
@@ -294,6 +322,10 @@ nav > div{
     padding: 3px 8px;
     margin: 0;
 }
+
+/* Product list section (END) */
+
+
 
 
 #main-footer-separator{
