@@ -19,31 +19,37 @@ convertPrice();
 
 
 
+
 // *** Add to cart button
 const addCartButtons = document.querySelectorAll('.add-to-cart');
 Array.from(addCartButtons).forEach(cartButton => {
     cartButton.addEventListener('click', e => {
         e.preventDefault();
+        let cartItemNumber = Number(document.querySelector('.nav-cart-number').innerHTML);
         let url = 'http://127.0.0.1:8000/add-product-cart';
         let data = {product_id: cartButton.getAttribute('data-product-id'), product_number: 1};
         let err = 'ارتباط با سرور مشکل دارد';
-        sendPostData(url, data, err)
-        .then(data => {
-            console.log(data);
-            if(data.status == 200){
-                Array.from(cartButton.parentElement.children).forEach(elem => {
-                    if(elem.hasAttribute('success')){
-                        elem.classList.remove('d-none');
-                        setTimeout(() => {
-                            elem.classList.add('d-none');
-                        }, 3000);
-                    }
-                })
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        })
+
+        // ! Only activate following section in deploying as full-stack
+        // sendPostData(url, data, err)
+        // .then(data => {
+        //     console.log(data);
+        //     if(data.status == 200){
+        //         Array.from(cartButton.parentElement.children).forEach(elem => {
+        //             if(elem.hasAttribute('success')){
+        //                 elem.classList.remove('d-none');
+        //                 setTimeout(() => {
+        //                     elem.classList.add('d-none');
+        //                 }, 3000);
+        //             }
+        //         })
+        //     }
+        // })
+        // .catch(err => {
+        //     console.log(err);
+        // })
+        document.querySelector('.nav-cart-number').innerHTML = cartItemNumber + 1;
+        Swal.fire("محصول به سبد خرید اضافه شد");
     })
 })
 
