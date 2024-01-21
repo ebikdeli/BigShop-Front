@@ -1,11 +1,15 @@
 /* **** NOTE: When using bootstrap, if we want to put row or more block in the row but being responsive, it is recommended to use 'row' class to send exessive content to the new line automatically */
 
 /* Following block makes the body responsive without using bootstrap */
-/* .product--body{
+main{
+    min-height: 80vh !important;
+}
+
+.product--body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-} */
+}
 
 
 /* * product detail section */
@@ -109,5 +113,10 @@ input[type='color']{
 
 #carouselExampleControls{
     width: 200px;
+    height: 145px;
+}
+
+.carousel-item img{
+    width: 180px;
     height: 145px;
 }
