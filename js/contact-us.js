@@ -24,7 +24,10 @@ form.addEventListener('submit', e=>{
         form['message'].style.borderColor = 'red';
         errors += 1;
     }
-    if(!errors){
-        form.submit();
-    }
+    // ! Uncomment below block before deployment
+    // if(!errors){
+    //     form.submit();
+    // }
+    // ! Delete follow line before deployment
+    Swal.fire("ممنون از ارسال پیام");
 })

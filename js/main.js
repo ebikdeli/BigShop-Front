@@ -132,17 +132,19 @@ prForm.addEventListener('submit', e =>{
         })
         document.getElementById('email-input').style.borderColor = '#dee2e6';
         document.getElementById('content-input').style.borderColor = '#dee2e6';
-
-        // Send data to server using ajax
-        sendPrData('http://127.0.0.1:8000/pr', form, 'اطلاعات ارسال نشد')
-        // sendPrData(url='http://ip.jsontest.com/', form=form, errorMsg='اطلاعات ارسال نشد')
-        .then(jsonData => {
-            console.log(jsonData);
-            document.querySelector('#pr-success').textContent = 'از همکاری شما سپاسگذاریم';
-        })
-        .catch(err => {
-            document.querySelector('#pr-failed').textContent = err;
-        })
+        // ! Uncomment below block before deployment
+        // // Send data to server using ajax
+        // sendPrData('http://127.0.0.1:8000/pr', form, 'اطلاعات ارسال نشد')
+        // // sendPrData(url='http://ip.jsontest.com/', form=form, errorMsg='اطلاعات ارسال نشد')
+        // .then(jsonData => {
+        //     console.log(jsonData);
+        //     document.querySelector('#pr-success').textContent = 'از همکاری شما سپاسگذاریم';
+        // })
+        // .catch(err => {
+        //     document.querySelector('#pr-failed').textContent = err;
+        // })
+        // ! Delete following line before deployment
+        document.querySelector('#pr-success').textContent = 'از همکاری شما سپاسگذاریم';
 
         // Disable 'pr-box' inputs and buttoms and hide the messages 
         setTimeout(()=>{

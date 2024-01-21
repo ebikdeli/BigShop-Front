@@ -16,18 +16,21 @@ submitButton.parentElement.addEventListener('click', e => {
         const password = document.querySelector('[name="password"]').value;
         const passwordConfirm = document.querySelector('[name="password-confirm"]').value;
         // If data validation was successful, send data to server
-        if(signUpDataValidation(email, password, passwordConfirm)){
-            const url = 'http://127.0.0.1:8000/signup';
-            const data = {email: email, password: password};
-            const err = 'مشکلی در اتصال پیش آمده';
-            sendPostData(url, data, err)
-            .then(data => {
-                console.log(data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-        }
+        // ! Uncomment below block before deployment
+        // if(signUpDataValidation(email, password, passwordConfirm)){
+        //     const url = 'http://127.0.0.1:8000/signup';
+        //     const data = {email: email, password: password};
+        //     const err = 'مشکلی در اتصال پیش آمده';
+        //     sendPostData(url, data, err)
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     })
+        // }
+        // ! Delete below line before deployment
+        Swal.fire("سرور تست است")
     }
 })
 
