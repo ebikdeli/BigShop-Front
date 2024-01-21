@@ -14,7 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- **** 'base_head' block in 'base.html' -->
@@ -43,62 +43,63 @@
     <!-- **** 'header' block in 'base.html/include header.html' **** -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
-            <img src="./images/bigshop-logo.png" style="height: 60px; width: auto;" alt="bigshop-logo">
-          </a>
-          <!-- Navbar menu and search & icons -->
-          <div class="nav-menu-si d-flex justify-content-between align-items-center w-100">
-            <!-- Navbar menu -->
-            <div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/about-us.html">درباره ما</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="http://127.0.0.1:5500/contact-us-form.html">تماس با</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="http://127.0.0.1:5500/faq-list.html">سوالات پر تکرار</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      دسته بندی محصولات
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">لپ تاپ</a></li>
-                      <li><a class="dropdown-item" href="#">موبایل</a></li>
-                      <li><a class="dropdown-item" href="#">ابزار شبکه</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/bigshop-logo.png" style="height: 60px; width: auto;" alt="bigshop-logo">
+            </a>
+            <!-- Navbar menu and search & icons -->
+            <div class="nav-menu-si d-flex justify-content-between align-items-center w-100">
+                <!-- Navbar menu -->
+                <div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./about-us.html">درباره ما</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./contact-us-form.html">تماس با</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./faq-list.html">سوالات پر تکرار</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    دسته بندی محصولات
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">لپ تاپ</a></li>
+                                    <li><a class="dropdown-item" href="#">موبایل</a></li>
+                                    <li><a class="dropdown-item" href="#">ابزار شبکه</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- search & icons -->
+                <div class="nav-si d-flex align-items-center justify-content-between">
+                    <!-- search -->
+                    <div class="d-flex align-items-center justify-content-center">
+                        <input type="text" name="search" id="nav-search" placeholder="جست و جو">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <!-- Icons -->
+                    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap: 20px;">
+                        <a class="nav-icon d-flex align-items-center justify-content-center" href="./cart.html">
+                            <small class="nav-cart-number">0</small>
+                            <i class="bi bi-bag-check"></i>
+                        </a>
+                        <a class="nav-icon d-flex align-items-center justify-content-center" href="./signin.html">
+                            <small class="nav-profile-text">ورود/ثبت نام</small>
+                            <i class="bi bi-person-fill"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- search & icons -->
-            <div class="nav-si d-flex align-items-center justify-content-between">
-              <!-- search -->
-              <div class="d-flex align-items-center justify-content-center">
-                <input type="text" name="search" id="nav-search" placeholder="جست و جو">
-                <i class="bi bi-search"></i>
-              </div>
-              <!-- Icons -->
-              <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap: 20px;">
-                <a class="nav-icon d-flex align-items-center justify-content-center" href="./cart.html">
-                  <small class="nav-cart-number">0</small>
-                  <i class="bi bi-bag-check"></i>
-                </a>
-                <a class="nav-icon d-flex align-items-center justify-content-center" href="./signin.html">
-                  <small class="nav-profile-text">ورود/ثبت نام</small>
-                  <i class="bi bi-person-fill"></i>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
     </nav>
     <!-- **** 'header' block in 'base.html/include header.html' **** -->
@@ -126,8 +127,7 @@
                     <form action="" method="post" id="profile-edit-form">
                         <div class="d-flex justify-content-center align-items-center flex-wrap">
                             <!-- ! SHOW SUCCESS OR ERROR MESAGE AFTER EDITING PROFILE -->
-                            <div
-                                class="col-lg-10 col-md-10 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column edit-profile-result mt-3 mb-1"
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-11 d-flex justify-content-center align-items-center flex-column edit-profile-result mt-3 mb-1"
                                 style="font-size: 18px;">
                             </div>
                             <!-- ! profile-email -->
@@ -195,7 +195,8 @@
                                 </label>
                                 <div class="mb-3 d-flex justify justify-content-center align-items-center">
                                     <div style="width: 150px; height: 150px;">
-                                        <img src="./images/generic-profile-image.svg" id="profile-edit-current-image" alt=""
+                                        <img src="./images/generic-profile-image.svg" id="profile-edit-current-image"
+                                            alt=""
                                             style="width: 100%; height: 100%; border: 1px; border-color: rgb(214, 27, 27); border-radius: 50%">
                                     </div>
                                 </div>
@@ -209,7 +210,8 @@
                                         <input type="file" name="image" src="" alt="" id="upload-profile-image">
                                         بارگذاری تصویر جدید
                                     </label>
-                                    <button id="verify-new-image" class="d-none btn btn-info ms-1" style="font-size: 18px;">
+                                    <button id="verify-new-image" class="d-none btn btn-info ms-1"
+                                        style="font-size: 18px;">
                                         ذخیره
                                     </button>
                                 </div>
@@ -324,10 +326,10 @@
     <!-- *** 'footer' block in 'base.html/include footer.html' *** -->
     <footer class="mx-auto mt-3 pt-3">
         <div id="footer-content" class="py-3 text-center">
-          <small class="m-0" style="color: beige;">تمامی حقوق وبسایت بیگ شاپ متعلق به شرکت
-            <a href="https://www.bigtek.ir" style="text-decoration: none; color:rgb(255, 255, 255);">رایانه پندار
-              آپادانا</a>
-            می باشد</small>
+            <small class="m-0" style="color: beige;">تمامی حقوق وبسایت بیگ شاپ متعلق به شرکت
+                <a href="https://www.bigtek.ir" style="text-decoration: none; color:rgb(255, 255, 255);">رایانه پندار
+                    آپادانا</a>
+                می باشد</small>
         </div>
     </footer>
     <!-- *** 'footer' block in 'base.html/include footer.html' -->
@@ -344,7 +346,8 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 <!-- **** 'base_scripts' block in 'base.html' -->
 
 
