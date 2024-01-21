@@ -1,6 +1,16 @@
 import {sendPostData} from './ajax.js';
-import {validateEmail} from './functions.js';
+import { validateEmail, numberWithCommas, parseToNumber } from './functions.js';
 import getCookie from './csrftoken.js';
+
+
+
+// Convert all price to comma separated values
+let convertPrice = () => {
+    Array.from(document.querySelectorAll('.price-value')).forEach(priceElem => {
+        priceElem.innerHTML = numberWithCommas(priceElem.innerHTML);
+    })
+}
+convertPrice();
 
 
 
@@ -12,21 +22,21 @@ iconList.addEventListener('click', e => {
     const icons = document.querySelectorAll('.profile-icons-list > i');
     const profileContentSections = document.querySelectorAll('.profile-content > div');
     
-    if(e.target.tagName == 'I' && !e.target.classList.contains('active')){
+    if(e.target.tagName == 'I' && !e.target.classList.contains('active-content')){
         // Disable display of current profile content section
         Array.from(icons).forEach(iconNode => {
             profileContentSections.forEach(profileContentNode => {
-                profileContentNode.classList.remove('active');
+                profileContentNode.classList.remove('active-content');
                 // Display related contents based on selected icon (Actually this is could be the last step but this way is more optimal)
                 if(profileContentNode.getAttribute('data-icon-content') == e.target.getAttribute('data-icon-content')){
-                    profileContentNode.classList.add('active');
+                    profileContentNode.classList.add('active-content');
                 }
             })
             // Disable current selected icon from icon list
-            iconNode.classList.remove('active');
+            iconNode.classList.remove('active-content');
         })
         // Enlarge clicked icon from icon list
-        e.target.classList.add('active');
+        e.target.classList.add('active-content');
     }
 })
 

@@ -22,7 +22,6 @@ function recalculateCart()
 {
   var subtotal = 0;
   let totalQuantity = 0;
-  
   /* Sum up row total prices */
   $('.cart--total--price--value').each(function () {
     subtotal += parseFloat($(this).text());
@@ -50,9 +49,14 @@ function recalculateCart()
       $('.checkout').fadeIn(fadeTime);
     }
     $('.totals-value').fadeIn(fadeTime);
-
     // Check if cart is empty
     checkCartQuantity(totalItemsElem, emptyCartElem, cartExistElem);
+    try{
+      document.querySelector('.nav-cart-number').innerHTML = document.querySelector('#cart-items').innerHTML;
+    }
+    catch(error){
+      document.querySelector('.nav-cart-number').innerHTML = 0;
+    }
   });
 }
 
@@ -100,18 +104,20 @@ changeProductQuantity.addEventListener('click', e => {
         const data = {
           product_id: elem.getAttribute('data-product-id'), 
           quantity: Number(elem.value) + 1}
-        sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
-        .then(data => {
-          if(data.status == '200'){
-            console.log(data);
-            addOne(elem, 15);
-            updateQuantity(elem);
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        })
-        
+          // ! In deployment uncomment below block
+        // sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
+        // .then(data => {
+        //   if(data.status == '200'){
+        //     console.log(data);
+        //     addOne(elem, 15);
+        //     updateQuantity(elem);
+        //   }
+        // })
+        // .catch(err => {
+        //   console.log(err);
+        // })
+          addOne(elem, 15);
+          updateQuantity(elem);
       }
     })
   }
@@ -123,17 +129,20 @@ changeProductQuantity.addEventListener('click', e => {
         const data = {
           product_id: elem.getAttribute('data-product-id'), 
           quantity: Number(elem.value) - 1}
-        sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
-        .then(data => {
-          if(data.status == '200'){
-            console.log(data);
-            minuseOne(elem);
-            updateQuantity(elem);
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        })
+          // ! In deployment uncomment below block
+        // sendPostData('http://127.0.0.1:8000/change-product-quantity-cart', data, 'مشکلی پیش آمده')
+        // .then(data => {
+        //   if(data.status == '200'){
+        //     console.log(data);
+        //     minuseOne(elem);
+        //     updateQuantity(elem);
+        //   }
+        // })
+        // .catch(err => {
+        //   console.log(err);
+        // })
+        minuseOne(elem);
+        updateQuantity(elem);
       }
     })
   }
@@ -155,26 +164,28 @@ $('.cart--remove--icon').click( function() {
   }).then((result) => {
     if (result.isConfirmed) {
       let data = {product_id: this.getAttribute('data-product-id')};
-      sendPostData('http://127.0.0.1:8000/delete-product-cart', data, 'مشکلی پیش آمده')
-      .then(data => {
-        console.log(data)
-        if(data.status == 200){
-          removeItem(this);
-          Swal.fire(
-            'پاک شد!',
-            'محصول از سبد خرید حذف شد',
-            'success'
-          )
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        Swal.fire({
-          icon: 'error',
-          title: 'مشکلی پیش آمده',
-          text: 'محصول حذف نشد',
-        })
-      })
+      // ! In deployment uncomment below block
+      // sendPostData('http://127.0.0.1:8000/delete-product-cart', data, 'مشکلی پیش آمده')
+      // .then(data => {
+      //   console.log(data)
+      //   if(data.status == 200){
+      //     removeItem(this);
+      //     Swal.fire(
+      //       'پاک شد!',
+      //       'محصول از سبد خرید حذف شد',
+      //       'success'
+      //     )
+      //   }
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      //   Swal.fire({
+      //     icon: 'error',
+      //     title: 'مشکلی پیش آمده',
+      //     text: 'محصول حذف نشد',
+      //   })
+      // })
+      removeItem(this);
     }
     else{
       Swal.fire('محصول در سبد خرید باقی ماند')
